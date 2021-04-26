@@ -21,6 +21,15 @@ module.exports = {
         enforce: 'pre',
         use: ['source-map-loader'],
       },
+
+      {
+        test: /\.css$/i,
+        use: [
+          "handlebars-loader", // handlebars loader expects raw resource string
+          "extract-loader",
+          "css-loader",
+        ],
+      },
     ],
   },
   optimization: {

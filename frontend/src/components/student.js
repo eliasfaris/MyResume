@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 import Clock from 'react-live-clock';
 
 
-export default class Home extends Component {
+export default class Student extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,22 +27,23 @@ export default class Home extends Component {
     render() {
         var { isLoaded, items } = this.state;
         document.title = 'Covid | Home'
-        
+
         var CurrentDate = new Date().toLocaleDateString(); //Uses React's in built date function 
-      
+
         return (
             <div className="Home">
                 <center>
+                    <h1> FROM Recruiter</h1>
                     <h1>Covid Cases</h1>
                     <h5>{CurrentDate}-<Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /></h5>
-                  
-                   
+
+
                 </center>
                 <center> <table border="3px">
-                    <th width = "5%">State</th>
+                    <th width="5%">State</th>
                     <th width="5%">Positive</th>
                     <th width="5%">Negative</th>
-                    <th width = "5%">Recovered</th>
+                    <th width="5%">Recovered</th>
                     <th width="5%">Last Updated</th>
                     {items.map(item => ( //Using the map to loop through the API with the key and value 
 
