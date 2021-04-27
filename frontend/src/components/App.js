@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Student from './student';
 import Recruiter from './recruiter';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 
 
