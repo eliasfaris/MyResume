@@ -5,6 +5,7 @@ import Student from './student';
 import Recruiter from './recruiter';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
+import logo from './images/logo.png'
 
 
 
@@ -24,6 +25,10 @@ class App extends Component {
       <Router>
         <Fragment>
           <Navbar />
+          <center>
+            <img src={logo} />
+          </center>
+
           <div className="container">
             <Switch>
 
