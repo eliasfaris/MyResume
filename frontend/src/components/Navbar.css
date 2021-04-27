@@ -1,3 +1,10 @@
 .navbar {
-    background-color: aqua !important;
+    background-color: #E6A923  !important;
+}
+.navbar-brand{
+    color: white !important;
+    
+}
+.MyResume{
+    padding-left: 15% !important;
 }
