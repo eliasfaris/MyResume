@@ -1,70 +1,39 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import Clock from 'react-live-clock';
-
+import './Recruiter.css';
 
 export default class Recruiter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [], //Uses an array to hold the API information 
-      isLoaded: false,
+  
 
-    }
-  }
-  componentDidMount() {
-
-    fetch('https://api.covidtracking.com/v1/states/current.json') //Fetching the information from the API
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true, //Checks if the API is fully loaded 
-          items: json,
-        })
-      });
-
-  }
   render() {
-    var { isLoaded, items } = this.state;
-    document.title = 'Covid | Home'
+    
+    
+    document.title = 'Recruiter Page'
 
     var CurrentDate = new Date().toLocaleDateString(); //Uses React's in built date function 
 
     return (
+      <form>
+            <br></br>
+            <div class="recruiter-input">
+            <span class="input-group-addon">Major</span>
+              <input id="skills" type="text" class="form-control" name="msg" placeholder="What major are you looking for?"/>
+              <br></br>
+              <span class="input-group-addon">Skills</span>
+              <input id="skills" type="text" class="form-control" name="msg" placeholder="All Skills (ex. Python, JavaScript, ...)"/>
+              <br></br>
+              <span class="input-group-addon">Graduation Year</span>
+              <input id="grad-year" type="text" class="form-control" name="msg" placeholder="Enter graduation year of student. (ex. 2023)"/>
+              <br></br>
+            </div>
+            <center>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </center>
+          </form>
+  
 
-      <div className="Home">
-        <center>
-          <h1> FROM Recruiter</h1>
-          <h1>Covid Cases</h1>
-          <h5>{CurrentDate}-<Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /></h5>
-
-
-        </center>
-        <center> <table border="3px">
-          <th width="5%">State</th>
-          <th width="5%">Positive</th>
-          <th width="5%">Negative</th>
-          <th width="5%">Recovered</th>
-          <th width="5%">Last Updated</th>
-          {items.map(item => ( //Using the map to loop through the API with the key and value 
-
-            <tr key={item.date}>
-              <td>{item.state}</td>
-              <td>{item.positive}</td>
-              <td>{item.negative}</td>
-              <td>{item.recovered}</td>
-              <td>{item.lastUpdateEt}</td>
-            </tr>
-
-          ))}
-
-
-        </table>
-        </center>
-
-
-
-      </div>
+        
     );
   }
 

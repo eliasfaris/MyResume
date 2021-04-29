@@ -1,69 +1,52 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import Clock from 'react-live-clock';
+import './Student.css';
 
 
 export default class Student extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [], //Uses an array to hold the API information 
-            isLoaded: false,
 
-        }
-    }
-    componentDidMount() {
-
-        fetch('https://api.covidtracking.com/v1/states/current.json') //Fetching the information from the API
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    isLoaded: true, //Checks if the API is fully loaded 
-                    items: json,
-                })
-            });
-
-    }
     render() {
-        var { isLoaded, items } = this.state;
-        document.title = 'Covid | Home'
+
+
+                function success() {
+                var skills = document.getElementById('skills').value;
+                var work = document.getElementById('work').value;
+                var project = document.getElementById('projects').value;
+                alert("Updated skills: " + skills)
+                alert("Updated work experience: " + work)
+                alert("Updated personal projects: " + project)
+                }
+            
+        document.title = 'Student page'
 
         var CurrentDate = new Date().toLocaleDateString(); //Uses React's in built date function 
 
         return (
-            <div className="Home">
-                <center>
-                    <h1> FROM Recruiter</h1>
-                    <h1>Covid Cases</h1>
-                    <h5>{CurrentDate}-<Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} /></h5>
-
-
-                </center>
-                <center> <table border="3px">
-                    <th width="5%">State</th>
-                    <th width="5%">Positive</th>
-                    <th width="5%">Negative</th>
-                    <th width="5%">Recovered</th>
-                    <th width="5%">Last Updated</th>
-                    {items.map(item => ( //Using the map to loop through the API with the key and value 
-
-                        <tr key={item.date}>
-                            <td>{item.state}</td>
-                            <td>{item.positive}</td>
-                            <td>{item.negative}</td>
-                            <td>{item.recovered}</td>
-                            <td>{item.lastUpdateEt}</td>
-                        </tr>
-
-                    ))}
-
-
-                </table>
-                </center>
-
-
-
+            
+                    
+            <form>
+            <br></br>
+            <div class="student-input">
+               <h1 class="top">Elias Faris </h1>
+              <span class="input-group-addon">Skills</span>
+              <input id="skills" type="text" class="form-control" name="msg" placeholder="All Skills (ex. Python, JavaScript, ...)"/>
+              <br></br>
+              <span class="input-group-addon">Work Experience</span>
+              <input id="work" type="text" class="form-control" name="msg" placeholder="Describe experiences. Separate each as a bullet point"/>
+              <br></br>
+              <span class="input-group-addon">Personal Project</span>
+              <input id="project" type="text" class="form-control" name="msg" placeholder="Describe projects you've done. Separate each as a bullet point"/>
             </div>
+            
+            <center>
+                <button type="submit" class="btn btn-primary" onclick={success}>Save</button>
+            </center>
+          </form>
+                    
+
+
+                
         );
     }
 

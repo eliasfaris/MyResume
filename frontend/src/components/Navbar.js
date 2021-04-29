@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Nav } from 'react-bootstrap';
-import './NavBar.css';
+import './Navbar.css';
 
 
 export class Navbar extends Component {
@@ -11,7 +11,6 @@ export class Navbar extends Component {
     render() {
 
         return (
-
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="MyResume">

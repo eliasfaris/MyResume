@@ -1,0 +1,17 @@
+.student-input{
+    padding-left: 30% !important;
+    position: relative;
+   
+}
+.top{
+    font-weight: bold;
+}
+
+.input{
+    font-weight: bold;
+}
+.btn{
+    background-color: #003C5C;
+    margin: 30px !important;
+    
+}
