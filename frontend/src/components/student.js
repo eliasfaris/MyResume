@@ -30,7 +30,7 @@ export default class Student extends Component {
         <center>
           <table class="studentInfo">
             <tr>
-              <th>Tools</th>
+              <th></th>
 
               <th></th>
             </tr>
