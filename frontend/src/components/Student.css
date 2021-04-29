@@ -1,17 +1,34 @@
-.student-input{
-    padding-left: 30% !important;
+.student-input {
+    /* padding-left: 30% !important; */
     position: relative;
-   
+
 }
-.top{
+
+.top {
     font-weight: bold;
 }
 
-.input{
+.input {
     font-weight: bold;
 }
-.btn{
+
+.btn {
     background-color: #003C5C;
     margin: 30px !important;
-    
+
+}
+
+.th {
+    text-align: center;
+}
+
+tr,
+td,
+th {
+    border: 1px solid black;
+}
+
+.studentInfo {
+    width: 100%;
+    border: 1px solid black;
 }
