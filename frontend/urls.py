@@ -1,10 +1,12 @@
+from django.conf.urls import url
 from django.urls import path
-from .views import index
+from .views import index, redirect
 
-#Holds the URL path for the application 
+# Holds the URL path for the application
 urlpatterns = [
-   path('', index), #This is the path for home 
-   path('student', index),
-   path('recruiter', index),
+    path('', redirect),
+    path('welcome', index),  # This is the path for home
+    path('student', index),
+    path('recruiter', index),
 
 ]

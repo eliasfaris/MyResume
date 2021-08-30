@@ -50,8 +50,7 @@ export default class Student extends Component {
                     <span class="input-group-addon">Personal Project</span>
                     <input id="project" type="text" class="form-control" name="msg" placeholder="Describe projects you've done. Separate each as a bullet point" />
                   </div>
-                  <br>
-                  </br>
+                  <br></br>
                   <center>
                     <button type="submit" class="btn btn-primary" onclick={success}>Save</button>
                   </center>

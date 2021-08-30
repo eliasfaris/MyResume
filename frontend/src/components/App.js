@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Student from './student';
 import Recruiter from './recruiter';
+import Welcome from './welcome';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 import logo from './images/logo.png'
@@ -25,13 +26,11 @@ class App extends Component {
       <Router>
         <Fragment>
           <Navbar />
-          <center>
-            <img src={logo} />
-          </center>
+
 
           <div className="container">
             <Switch>
-
+              <Route exact path="/welcome" component={Welcome} />
               <Route exact path="/student" component={Student} />
               <Route exact path="/recruiter" component={Recruiter} />
 
