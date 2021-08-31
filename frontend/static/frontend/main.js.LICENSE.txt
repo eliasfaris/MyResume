@@ -954,6 +954,8 @@
 
 /*! export compose [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export composeWithDevTools [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export connect [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-redux/es/connect/connect.js .default */
 
 /*! export connectAdvanced [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-redux/es/components/connectAdvanced.js .default */
@@ -1011,6 +1013,8 @@
 /*! export default [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export defaultMergeProps [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export devToolsEnhancer [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export findDOMNode [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -1376,6 +1380,8 @@
 
 /*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 
+/*! runtime requirements: __webpack_require__, __webpack_exports__ */
+
 /*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.n, __webpack_require__.r, __webpack_require__.* */
 
 /*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
@@ -1422,6 +1428,10 @@
   !*** ./src/index.js ***!
   \**********************/
 
+/*!**********************!*\
+  !*** ./src/store.js ***!
+  \**********************/
+
 /*!*****************************!*\
   !*** ./src/actions/auth.js ***!
   \*****************************/
@@ -1430,9 +1440,25 @@
   !*** ./src/actions/types.js ***!
   \******************************/
 
+/*!******************************!*\
+  !*** ./src/reducers/auth.js ***!
+  \******************************/
+
 /*!*******************************!*\
   !*** ./src/components/App.js ***!
   \*******************************/
+
+/*!*******************************!*\
+  !*** ./src/reducers/index.js ***!
+  \*******************************/
+
+/*!*******************************!*\
+  !*** ./src/reducers/leads.js ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/reducers/errors.js ***!
+  \********************************/
 
 /*!*********************************!*\
   !*** ./src/actions/messages.js ***!
@@ -1444,6 +1470,10 @@
 
 /*!**********************************!*\
   !*** ./src/components/Navbar.js ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/reducers/messages.js ***!
   \**********************************/
 
 /*!***********************************!*\
@@ -2066,6 +2096,10 @@
   !*** ./node_modules/react-redux/es/index.js ***!
   \**********************************************/
 
+/*!**********************************************!*\
+  !*** ./node_modules/redux-thunk/es/index.js ***!
+  \**********************************************/
+
 /*!***********************************************!*\
   !*** ./node_modules/axios/lib/core/settle.js ***!
   \***********************************************/
@@ -2220,6 +2254,10 @@
 
 /*!********************************************************!*\
   !*** ./node_modules/react/cjs/react.production.min.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/redux-devtools-extension/index.js ***!
   \********************************************************/
 
 /*!*********************************************************!*\

@@ -10,7 +10,7 @@ import PrivateRoute from './common/PrivateRoute';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 import logo from './images/logo.png'
-
+import store from '../store';
 
 import { Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
@@ -30,31 +30,32 @@ const alertOptions = {
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   store.dispatch(loadUser()); //Loads the user for the application  
-  // }
+  componentDidMount() {
+    store.dispatch(loadUser()); //Loads the user for the application  
+  }
 
   render() {
     return (
 
+      <Provider store={store}>
+        <Router>
+          <Fragment>
+            <Navbar />
 
-      <Router>
-        <Fragment>
-          <Navbar />
 
+            <div className="container">
+              <Switch>
+                <Route exact path="/welcome" component={Welcome} />
+                <Route exact path="/student" component={Student} />
+                <Route exact path="/recruiter" component={Recruiter} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
 
-          <div className="container">
-            <Switch>
-              <Route exact path="/welcome" component={Welcome} />
-              <Route exact path="/student" component={Student} />
-              <Route exact path="/recruiter" component={Recruiter} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-
-            </Switch>
-          </div>
-        </Fragment>
-      </Router>
+              </Switch>
+            </div>
+          </Fragment>
+        </Router>
+      </Provider>
 
 
     );
