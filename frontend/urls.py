@@ -8,5 +8,8 @@ urlpatterns = [
     path('welcome', index),  # This is the path for home
     path('student', index),
     path('recruiter', index),
+    path('register', index),
+    path('login', index)
+    
 
 ]

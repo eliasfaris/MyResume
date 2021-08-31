@@ -4,9 +4,20 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Student from './student';
 import Recruiter from './recruiter';
 import Welcome from './welcome';
+import Login from './accounts/Login';
+import Register from './accounts/Register';
+import PrivateRoute from './common/PrivateRoute';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 import logo from './images/logo.png'
+
+
+import { Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
+import Alerts from './Alerts';
+
+import { Provider } from 'react-redux';
+import { loadUser } from '../actions/auth';
 
 
 
@@ -18,6 +29,10 @@ const alertOptions = {
 };
 
 class App extends Component {
+
+  // componentDidMount() {
+  //   store.dispatch(loadUser()); //Loads the user for the application  
+  // }
 
   render() {
     return (
@@ -33,6 +48,8 @@ class App extends Component {
               <Route exact path="/welcome" component={Welcome} />
               <Route exact path="/student" component={Student} />
               <Route exact path="/recruiter" component={Recruiter} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
 
             </Switch>
           </div>
