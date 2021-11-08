@@ -9,7 +9,6 @@ import Register from './accounts/Register';
 import PrivateRoute from './common/PrivateRoute';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
-import logo from './images/logo.png'
 import store from '../store';
 
 import { Provider as AlertProvider } from 'react-alert';
@@ -36,13 +35,10 @@ class App extends Component {
 
   render() {
     return (
-
       <Provider store={store}>
         <Router>
           <Fragment>
             <Navbar />
-
-
             <div className="container">
               <Switch>
                 <Route exact path="/welcome" component={Welcome} />
@@ -50,7 +46,6 @@ class App extends Component {
                 <Route exact path="/recruiter" component={Recruiter} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
-
               </Switch>
             </div>
           </Fragment>

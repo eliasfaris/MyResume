@@ -25,7 +25,7 @@ SECRET_KEY = 'ru@tkw4v$9*s^&z*+x@b4ej0&p9m_k8i43&96o#bf4&yg_4r%a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,7 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'frontend.apps.FrontendConfig',
+    'knox',
+    'accounts'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,6 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'MyResume.urls'
+
 
 TEMPLATES = [
     {

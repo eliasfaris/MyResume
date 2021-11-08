@@ -23,9 +23,9 @@ export class Login extends Component {
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
-      document.title = 'Covid | Login'
+      document.title = 'MyResume | Login'
     if (this.props.isAuthenticated) {
-      return <Redirect to="/" />;
+      return <Redirect to="/student" />;
     }
     const { username, password } = this.state;
     return (

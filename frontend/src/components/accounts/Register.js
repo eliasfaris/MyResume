@@ -36,10 +36,10 @@ export class Register extends Component {
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
-    document.title = 'Covid | Register';
+    document.title = 'MyResume | Register';
 
     if (this.props.isAuthenticated) {
-      return <Redirect to="/" />;
+      return <Redirect to="/student" />;
     }
     const { username, email, password, password2 } = this.state;
     return (
@@ -88,9 +88,7 @@ export class Register extends Component {
               />
             </div>
             <div className="form-group">
-              <button type="submit" className="btn btn-primary">
-                Register
-              </button>
+            <center><button type="submit" className="btn btn-primary">Register</button></center>
             </div>
             <p>
               Already have an account?<a class="btn btn-link"> <Link to="/login">Login</Link> </a>

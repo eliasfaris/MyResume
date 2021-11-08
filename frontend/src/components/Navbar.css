@@ -1,24 +1,23 @@
 .navbar {
-    background-color: #E6A923 !important;
-    padding-bottom: 0%;
-    padding-top: 0%;
-
-
+  background-color: #e6a923 !important;
+  padding-bottom: 0%;
+  padding-top: 0%;
 }
 
 .navbar-brand {
-    color: white !important;
-    background-color: #003C5C !important;
-    padding: 10%;
-
-
-
-
-
-
-
+  color: white !important;
+  background-color: #003c5c !important;
+  padding: 10%;
 }
 
 .MyResume {
-    padding-left: 15% !important;
+  padding-left: 15% !important;
+}
+
+.logoutbtn {
+  margin-left: 50% !important;
+}
+
+.textColor {
+  color: white;
 }
