@@ -91,7 +91,7 @@ export class Register extends Component {
             <center><button type="submit" className="btn btn-primary">Register</button></center>
             </div>
             <p>
-              Already have an account?<a class="btn btn-link"> <Link to="/login">Login</Link> </a>
+              Already have an account? <a href="/login">Login</a>
             </p>
           </form>
         </div>

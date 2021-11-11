@@ -56,12 +56,14 @@ export class Login extends Component {
             </div>
 
             <div className="form-group">
+              <center>
               <button type="submit" className="btn btn-primary">
                 Login
               </button>
+              </center>
             </div>
             <p>
-              Don't have an account?<a class="btn btn-link"><Link to="/register">Register</Link> </a> 
+              Don't have an account? <a href="/register">Register</a> 
             </p>
           </form>
         </div>

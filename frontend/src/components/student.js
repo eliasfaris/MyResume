@@ -26,7 +26,7 @@ export default class Student extends Component {
 
     return (
       <div>
-        <br></br>
+        {/* <br></br>
         <center>
           <table class="studentInfo">
             <tr>
@@ -59,7 +59,7 @@ export default class Student extends Component {
               </td>
             </tr>
           </table>
-        </center>
+        </center> */}
       </div>
 
 
