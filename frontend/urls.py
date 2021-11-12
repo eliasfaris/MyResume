@@ -11,5 +11,6 @@ urlpatterns = [
     path('register', index),
     path('login', index),
     path('student/header', index),
+    path('student/professional', index),
 
 ]

@@ -1,15 +1,15 @@
-import React, { Component, Fragment } from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
-import Student from './student';
-import Recruiter from './recruiter';
-import Welcome from './welcome';
-import Login from './accounts/Login';
-import Register from './accounts/Register';
-import PrivateRoute from './common/PrivateRoute';
+import React, { Component, Fragment } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
+import Student from "./student";
+import Recruiter from "./recruiter";
+import Welcome from "./welcome";
+import Login from "./accounts/Login";
+import Register from "./accounts/Register";
+import PrivateRoute from "./common/PrivateRoute";
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './Navbar';
-import store from '../store';
+import Navbar from "./Navbar";
+import store from "../store";
 
 //NEWLY ADDED
 import Basic from "../components/Left/Basic";
@@ -24,13 +24,12 @@ import Button from "@material-ui/core/Button";
 
 //END NEWLY ADDED
 
-import { Provider as AlertProvider } from 'react-alert';
-import AlertTemplate from 'react-alert-template-basic';
-import Alerts from './Alerts';
+import { Provider as AlertProvider } from "react-alert";
+import AlertTemplate from "react-alert-template-basic";
+import Alerts from "./Alerts";
 
-import { Provider } from 'react-redux';
-import { loadUser } from '../actions/auth';
-
+import { Provider } from "react-redux";
+import { loadUser } from "../actions/auth";
 
 function Templates() {
   const useStyles = makeStyles({
@@ -79,34 +78,32 @@ function Templates() {
 }
 
 // Alert Options
-const alertOptions = {
-  timeout: 3000,
-  position: 'top center',
-};
+// const alertOptions = {
+//   timeout: 3000,
+//   position: "top center",
+// };
 
 class App extends Component {
-
-  componentDidMount() {
-    store.dispatch(loadUser()); //Loads the user for the application  
-  }
+  // componentDidMount() {
+  //   store.dispatch(loadUser()); //Loads the user for the application
+  // }
 
   render() {
     return (
-
-
-
-      <div className="app">
-      <ResumeContextProvider>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" component={Templates} exact />
-            <Route path="/student" component={Basic} />
-          </Switch>
-        </BrowserRouter>
-        <Right />
-      </ResumeContextProvider>
-    </div>
-      
+      <Provider store={store}>
+        <Navbar />
+        <div className="app">
+          <ResumeContextProvider>
+            <BrowserRouter>
+              <Switch>
+                <Route path="/" component={Templates} exact />
+                <Route path="/student" component={Basic} />
+              </Switch>
+            </BrowserRouter>
+            <Right />
+          </ResumeContextProvider>
+        </div>
+      </Provider>
       // <Provider store={store}>
       //   {/* <ResumeContextProvider> */}
       //   <Router>
@@ -125,16 +122,13 @@ class App extends Component {
       //           <Route exact path="/register" component={Register} />
       //           <Route exact path="/login" component={Login} />
       //         </Switch>
-            
       //     </Fragment>
       //   </Router>
       //    {/* <Right /> */}
       //   {/* </ResumeContextProvider> */}
       //   {/* </div> */}
       // </Provider>
-      
-
     );
   }
 }
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById("app"));

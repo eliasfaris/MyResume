@@ -1,20 +1,19 @@
 import React, { useContext } from "react";
-import input from "@material-ui/core/input";
 // import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
+import { Input, TextField } from "@material-ui/core";
+import data from "../../utils/fake_data";
 
 function Header() {
-  const { content, updateHeaderData, removeFakeData } = useContext(
-    ResumeContext
-  );
+  const { content, updateHeaderData, removeFakeData } =
+    useContext(ResumeContext);
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
     updateHeaderData(data);
-    
   };
 
   return (
@@ -26,84 +25,94 @@ function Header() {
         autoComplete="off"
         // onSubmit={handleSubmit(onSubmit)}
       >
-        <input
+        <TextField
+          {...register("name", { required: true })}
+          id="outlined-basic"
+          name="name"
+          defaultValue={content.header.name}
+          placeholder="Full name"
+          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
+          onChange={handleSubmit(onSubmit)}
+        />
+        {/* <TextField
           id="outlined-basic"
           label="Full Name"
           name="name"
+          // type="name"
           variant="outlined"
           defaultValue={content.header.name}
-          {...register({required : true})}
+          {...register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        <input
+        /> */}
+        {/* 
+        <TextField
           id="outlined-basic"
           label="Address"
           name="address"
           variant="outlined"
           defaultValue={content.header.address}
-          {...register({required : true})}
+          // {...register({required : true})}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <input
+        <TextField
           id="outlined-basic"
           label="City"
           name="city"
           variant="outlined"
           defaultValue={content.header.city}
-          {...register({required : true})}
+          // {...register({required : true})}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <input
+        <TextField
           id="outlined-basic"
           label="State"
           name="state"
           variant="outlined"
           defaultValue={content.header.state}
-          {...register({required : true})}
+          // {...register({required : true})}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <input
+        <TextField
           id="outlined-basic"
           label="Zip Code"
           name="zip"
           variant="outlined"
           defaultValue={content.header.zip}
-          {...register({required : true})}
+          // {...register({required : true})}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <input
+        <TextField
           id="outlined-basic"
           label="Phone"
           name="phone"
           variant="outlined"
           defaultValue={content.header.phone}
-          {...register({required : true})}
+          // {...register({required : true})}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <input
+        <TextField
           id="outlined-basic"
           label="E-mail"
           name="email"
           variant="outlined"
           defaultValue={content.header.email}
-          {...register({required : true})}
+          // {...register({required : true})}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <input
+        <TextField
           id="outlined-multiline-static"
           label="Summary"
           name="summary"
@@ -111,7 +120,7 @@ function Header() {
           rows={7}
           variant="outlined"
           defaultValue={content.header.summary}
-          {...register({required : true})}
+          // {...register({required : true})}
           // inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{
@@ -120,7 +129,7 @@ function Header() {
             marginLeft: 8,
             marginRight: 8,
           }}
-        />
+        /> */}
         {/* <Button
           variant="contained"
           color="secondary"
