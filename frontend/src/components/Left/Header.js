@@ -26,33 +26,22 @@ function Header() {
         // onSubmit={handleSubmit(onSubmit)}
       >
         <TextField
-          {...register("name", { required: true })}
-          id="outlined-basic"
-          name="name"
-          defaultValue={content.header.name}
-          placeholder="Full name"
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-          onChange={handleSubmit(onSubmit)}
-        />
-        {/* <TextField
           id="outlined-basic"
           label="Full Name"
           name="name"
-          // type="name"
           variant="outlined"
           defaultValue={content.header.name}
-          {...register}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        /> */}
-        {/* 
+        /> 
         <TextField
           id="outlined-basic"
           label="Address"
           name="address"
           variant="outlined"
           defaultValue={content.header.address}
-          // {...register({required : true})}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
@@ -63,7 +52,7 @@ function Header() {
           name="city"
           variant="outlined"
           defaultValue={content.header.city}
-          // {...register({required : true})}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
@@ -74,7 +63,7 @@ function Header() {
           name="state"
           variant="outlined"
           defaultValue={content.header.state}
-          // {...register({required : true})}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
@@ -85,7 +74,7 @@ function Header() {
           name="zip"
           variant="outlined"
           defaultValue={content.header.zip}
-          // {...register({required : true})}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
@@ -96,7 +85,7 @@ function Header() {
           name="phone"
           variant="outlined"
           defaultValue={content.header.phone}
-          // {...register({required : true})}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
@@ -107,7 +96,7 @@ function Header() {
           name="email"
           variant="outlined"
           defaultValue={content.header.email}
-          // {...register({required : true})}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
@@ -120,8 +109,7 @@ function Header() {
           rows={7}
           variant="outlined"
           defaultValue={content.header.summary}
-          // {...register({required : true})}
-          // inputRef={register}
+          inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{
             marginTop: 20,
@@ -129,15 +117,7 @@ function Header() {
             marginLeft: 8,
             marginRight: 8,
           }}
-        /> */}
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          type="submit"
-          style={{ margin: 8 }}
-        >
-          Update
-        </Button> */}
+        /> 
       </form>
     </div>
   );

@@ -8,6 +8,7 @@ import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
 import Tooltip from "@material-ui/core/Tooltip";
 import { Link } from "@material-ui/core";
 import { ResumeContext } from "../../contexts/ResumeContext";
+import { render } from "react-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,6 +47,8 @@ function Right() {
     window.print();
   };
 
+  
+
   return (
     <div className="right">
       <div className={classes.root}>
@@ -67,6 +70,7 @@ function Right() {
       <Paper />
     </div>
   );
+
 }
 
 export default Right;

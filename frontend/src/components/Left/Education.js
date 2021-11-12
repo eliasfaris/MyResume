@@ -34,7 +34,7 @@ function Education() {
           variant="outlined"
           defaultValue={content.education.institution}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
@@ -45,7 +45,7 @@ function Education() {
           variant="outlined"
           defaultValue={content.education.city}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
@@ -56,7 +56,7 @@ function Education() {
           variant="outlined"
           defaultValue={content.education.major}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
@@ -67,7 +67,7 @@ function Education() {
           variant="outlined"
           defaultValue={content.education.gradYear}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
@@ -78,18 +78,18 @@ function Education() {
           variant="outlined"
           defaultValue={content.education.additional}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <Button
+        {/* <Button
           variant="contained"
           color="secondary"
           type="submit"
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         >
           {btnText}
-        </Button>
+        </Button> */}
       </form>
     </div>
   );

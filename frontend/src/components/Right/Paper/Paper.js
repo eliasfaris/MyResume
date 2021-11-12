@@ -9,9 +9,10 @@ function Paper() {
     <div className="">
       <div size="A4" className="page">
         <HeaderP />
-        <ProfessionalP />
         <EducationP />
+        <ProfessionalP />
         <AdditionalSkillsP />
+
       </div>
     </div>
   );

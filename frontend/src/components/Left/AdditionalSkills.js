@@ -40,7 +40,7 @@ function AdditionalSkills() {
               
             },
           })}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 {/*          {...register("message", {
@@ -53,7 +53,7 @@ function AdditionalSkills() {
           variant="outlined"
           defaultValue={content.additional[1]}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
@@ -64,7 +64,7 @@ function AdditionalSkills() {
           variant="outlined"
           defaultValue={content.additional[2]}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
@@ -75,7 +75,7 @@ function AdditionalSkills() {
           variant="outlined"
           defaultValue={content.additional[3]}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
@@ -86,18 +86,18 @@ function AdditionalSkills() {
           variant="outlined"
           defaultValue={content.additional[4]}
           inputRef={register}
-          // onChange={handleSubmit(onSubmit)}
+          onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <Button
+        {/* <Button
           variant="contained"
           color="secondary"
           type="submit"
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         >
           {btnText}
-        </Button>
+        </Button> */}
       </form>
     </div>
   );

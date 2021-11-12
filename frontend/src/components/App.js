@@ -21,6 +21,8 @@ import logo from "../components/images/logo.png";
 // import thumbn from "../../src/assets/templateA.png";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 //END NEWLY ADDED
 
@@ -39,6 +41,8 @@ function Templates() {
       marginLeft: 30,
     },
   });
+
+
 
   const classes = useStyles();
 
@@ -84,26 +88,60 @@ function Templates() {
 // };
 
 class App extends Component {
-  // componentDidMount() {
-  //   store.dispatch(loadUser()); //Loads the user for the application
-  // }
+  // static propTypes = {
+  //   auth: PropTypes.object.isRequired,
+  //   logout: PropTypes.func.isRequired,
+  // };
+  componentDidMount() {
+    store.dispatch(loadUser()); //Loads the user for the application
+  }
+
 
   render() {
+    // const { isAuthenticated, user } = this.props.auth;
+
+    // const authLinks = (
+    //   // <ul  className="navbar-nav logoutbtn">
+    //   //   <span className="navbar-text mr-3">
+    //   //     <strong class = "user">{user ? `Welcome ${user.username}!` : ""}</strong>
+    //   //   </span>
+    //   //   &nbsp;&nbsp;&nbsp;
+    //   //   {/* <Nav.Link href="/testing">Testing</Nav.Link> */}
+    //   //   <li>
+    //   //     <button class="navbar-brand" onClick={this.props.logout}>
+    //   //       Logout
+    //   //     </button>
+    //   //   </li>
+    //   // </ul>
+    //   <Right/>
+    // );
     return (
       <Provider store={store}>
         <Navbar />
         <div className="app">
-          <ResumeContextProvider>
+
+          
             <BrowserRouter>
               <Switch>
-                <Route path="/" component={Templates} exact />
-                <Route path="/student" component={Basic} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
               </Switch>
+
+              <ResumeContextProvider>
+              <Switch>
+                <Route path="/" component={Templates} exact /> 
+                <Route path="/student" component={Basic} />  
+              </Switch>
+              <Right />
+              </ResumeContextProvider>
             </BrowserRouter>
-            <Right />
-          </ResumeContextProvider>
+            
+            
+          
         </div>
       </Provider>
+
+      
       // <Provider store={store}>
       //   {/* <ResumeContextProvider> */}
       //   <Router>
@@ -131,4 +169,8 @@ class App extends Component {
     );
   }
 }
+
 ReactDOM.render(<App />, document.getElementById("app"));
+
+
+
