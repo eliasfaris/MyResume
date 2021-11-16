@@ -1,31 +1,87 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
-import Clock from 'react-live-clock';
-import './Student.css';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  BrowserRouter,
+} from "react-router-dom";
+import Clock from "react-live-clock";
+import "./Student.css";
+import Right from "./Right/Right";
+import Basic from "../components/Left/Basic";
+import ResumeContextProvider from "../contexts/ResumeContext";
 
 export default class Student extends Component {
-
   render() {
-
-
     function success() {
-      var skills = document.getElementById('skills').value;
-      var work = document.getElementById('work').value;
-      var project = document.getElementById('projects').value;
-      alert("Updated skills: " + skills)
-      alert("Updated work experience: " + work)
-      alert("Updated personal projects: " + project)
+      var skills = document.getElementById("skills").value;
+      var work = document.getElementById("work").value;
+      var project = document.getElementById("projects").value;
+      alert("Updated skills: " + skills);
+      alert("Updated work experience: " + work);
+      alert("Updated personal projects: " + project);
     }
 
     // console.log(skills);
 
-    document.title = 'Student page'
+    document.title = "Student page";
 
-    var CurrentDate = new Date().toLocaleDateString(); //Uses React's in built date function 
+    // var CurrentDate = new Date().toLocaleDateString(); //Uses React's in built date function
+    function Templates() {
+      const useStyles = makeStyles({
+        headerLink: {
+          color: "#FF8E53 ",
+          minWidth: 100,
+          marginLeft: 30,
+        },
+      });
 
+      const classes = useStyles();
+
+      return (
+        <div className="left">
+          <div className={myClasses.headerLeft}>
+            <Link to="/welcome" style={{ textAlign: "left" }}>
+              <img src={logo} alt="logo" className={myClasses.img2} />
+            </Link>
+          </div>
+          <hr className={myClasses.hr2} />
+          <h2 className={myClasses.templatesH2}>Templates</h2>
+          <div className={myClasses.cards}>
+            <div className={myClasses.templateCard}>
+              <Button
+                className={classes.headerLink}
+                component={Link}
+                to="/student/header"
+              >
+                The Basic
+              </Button>
+            </div>
+            {/* Placeholder for a second template */}
+            {/* <div className={myClasses.templateCard}>
+              <img src={thumbn} alt="thumbnail" className={myClasses.imgThumb} />
+              <Button
+                className={classes.headerLink}
+                component={Link}
+                to="/basic/header"
+              >
+                The Stylish
+              </Button>
+            </div> */}
+          </div>
+        </div>
+      );
+    }
     return (
-      <div>
+      <div className="app">
+        <ResumeContextProvider>
+          {Templates}
+          <Basic />
+          <Right />
+        </ResumeContextProvider>
+
         {/* <br></br>
         <center>
           <table class="studentInfo">
@@ -61,10 +117,6 @@ export default class Student extends Component {
           </table>
         </center> */}
       </div>
-
-
-
     );
   }
-
 }
