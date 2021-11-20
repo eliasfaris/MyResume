@@ -52,9 +52,11 @@ body {
     visibility: visible;
   }
   .page {
-    position: fixed;
-    /* left: 10px; */
-    /* top: -50px; */
+    /* position: fixed;
+    left: 10px;
+    top: -50px; */
+    margin-left: 1in;
+    margin-right: 1in;
   }
 }
 

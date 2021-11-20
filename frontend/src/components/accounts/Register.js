@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { register } from '../../actions/auth';
-import { createMessage } from '../../actions/messages';
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { register } from "../../actions/auth";
+import { createMessage } from "../../actions/messages";
 
 export class Register extends Component {
   state = {
-    username: '',
-    email: '',
-    password: '',
-    password2: '',
+    username: "",
+    email: "",
+    password: "",
+    password2: "",
   };
 
   static propTypes = {
@@ -22,7 +22,7 @@ export class Register extends Component {
     e.preventDefault();
     const { username, email, password, password2 } = this.state;
     if (password !== password2) {
-      this.props.createMessage({ passwordNotMatch: 'Passwords do not match' });
+      this.props.createMessage({ passwordNotMatch: "Passwords do not match" });
     } else {
       const newUser = {
         username,
@@ -36,9 +36,10 @@ export class Register extends Component {
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
-    document.title = 'MyResume | Register';
+    document.title = "MyResume | Register";
 
     if (this.props.isAuthenticated) {
+      localStorage.setItem("currUser", this.state.username);
       return <Redirect to="/student" />;
     }
     const { username, email, password, password2 } = this.state;
@@ -88,7 +89,11 @@ export class Register extends Component {
               />
             </div>
             <div className="form-group">
-            <center><button type="submit" className="btn btn-primary">Register</button></center>
+              <center>
+                <button type="submit" className="btn btn-primary">
+                  Register
+                </button>
+              </center>
             </div>
             <p>
               Already have an account? <a href="/login">Login</a>

@@ -51,6 +51,7 @@ export const login = (username, password) => (dispatch) => {
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data,
+        // history.push('/student');
       });
     })
     .catch((err) => {

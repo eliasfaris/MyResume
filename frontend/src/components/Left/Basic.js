@@ -48,48 +48,23 @@ function Left() {
   const { control, addFakeData, removeFakeData } = useContext(ResumeContext);
   const classes = useStyles();
 
-  function useFakeData(e) {
-    e.preventDefault();
-    addFakeData();
-  }
+  // function useFakeData(e) {
+  //   e.preventDefault();
+  //   addFakeData();
+  // }
 
-  function clearFakeData(e) {
-    e.preventDefault();
-    removeFakeData();
-  }
-
-  let expData;
-  if (control) {
-    expData = (
-      <Button
-        color="secondary"
-        onClick={clearFakeData}
-        className={classes.rootRemove}
-        // style={{ marginTop: 15, marginRight: 20, height: "auto" }}
-      >
-        remove example
-      </Button>
-    );
-  } else {
-    expData = (
-      <Button
-        color="primary"
-        onClick={useFakeData}
-        className={classes.rootAdd}
-        // style={{ marginTop: 15, marginRight: 20, height: "auto" }}
-      >
-        example
-      </Button>
-    );
-  }
+  // function clearFakeData(e) {
+  //   e.preventDefault();
+  //   removeFakeData();
+  // }
 
   return (
     <div className="left">
       <div className={myClasses.headerLeft}>
         <div styles={{ flexGrow: 2 }}>
-            <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
-        <div styles={{ flexGrow: 1 }}>{expData}</div>
+        {/* <div styles={{ flexGrow: 1 }}>{expData}</div> */}
       </div>
 
       <div className="">

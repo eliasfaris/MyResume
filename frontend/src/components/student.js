@@ -12,9 +12,14 @@ import "./Student.css";
 import Right from "./Right/Right";
 import Basic from "../components/Left/Basic";
 import ResumeContextProvider from "../contexts/ResumeContext";
+import createHistory from "history/createBrowserHistory";
+import useEffect from "react";
 
 export default class Student extends Component {
   render() {
+    // const reload = this.props => {
+    //   this.props.
+    // }
     function success() {
       var skills = document.getElementById("skills").value;
       var work = document.getElementById("work").value;
@@ -25,8 +30,25 @@ export default class Student extends Component {
     }
 
     // console.log(skills);
+    // onload;/
+
+    // console.log("USERNAME FROM STUDENT" + this.state.username);
+    // localStorage.setItem("currUser", this.state.username);
 
     document.title = "Student page";
+
+    // window.location.reload();
+
+    // localStorage.getItem("userInfo");
+
+    // var x = true;
+    // if (x) {
+    //   window.location.reload();
+    //   return false;
+    // }
+
+    // location.reload();
+    //
 
     // var CurrentDate = new Date().toLocaleDateString(); //Uses React's in built date function
     function Templates() {

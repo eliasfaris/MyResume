@@ -1,12 +1,20 @@
 import React, { createContext, useState, useEffect } from "react";
 import fakeData from "../utils/fake_data";
+import Login from "../components/accounts/Login";
 
 export const ResumeContext = createContext();
 
+// var user = Login.useState;
+
+// console.log(user);
+// console.log(currentUser);
 const ResumeContextProvider = (props) => {
   //If there is no data stored in localStorage, then use the default object.
+  var currentUser = localStorage.getItem("currUser");
+  console.log(currentUser);
+
   const [content, setContent] = useState(
-    JSON.parse(localStorage.getItem("dataLocal")) || {
+    JSON.parse(localStorage.getItem(currentUser)) || {
       header: {},
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
       education: {},
@@ -40,6 +48,10 @@ const ResumeContextProvider = (props) => {
     setContentFake(fakeData);
   }
 
+  function saveUserInfo() {
+    setContent();
+  }
+
   function removeFakeData() {
     setControl(false);
     setContentFake({
@@ -50,7 +62,8 @@ const ResumeContextProvider = (props) => {
     });
   }
   useEffect(() => {
-    localStorage.setItem("dataLocal", JSON.stringify(content));
+    localStorage.setItem(currentUser, JSON.stringify(content));
+    // this.setState({});
   }, [content]);
 
   return (
@@ -66,6 +79,7 @@ const ResumeContextProvider = (props) => {
         updateAdditionalData,
         addFakeData,
         removeFakeData,
+        saveUserInfo,
       }}
     >
       {/* This refers to the children that this provider/components wraps. */}

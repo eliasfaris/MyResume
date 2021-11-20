@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { login } from '../../actions/auth';
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "../../actions/auth";
+import createHistory from "history/createBrowserHistory";
 
 export class Login extends Component {
   state = {
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   };
 
   static propTypes = {
@@ -17,14 +18,29 @@ export class Login extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.login(this.state.username, this.state.password);
+    this.props.login(this.state.username, this.state.password),
+      localStorage.setItem("userInfo", JSON.stringify(this.state.username));
   };
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
-  render() {
-      document.title = 'MyResume | Login'
+  shouldRefresh = () => {
+    this.state = {
+      refresh: false,
+    };
+  };
+
+  shouldRefresh = () => {
     if (this.props.isAuthenticated) {
+      console.log("hei?");
+      window.location.reload();
+    }
+  };
+  render() {
+    document.title = "MyResume | Login";
+    if (this.props.isAuthenticated) {
+      // JSON.parse(localStorage.getItem("userInfo"));
+      localStorage.setItem("currUser", this.state.username);
       return <Redirect to="/student" />;
     }
     const { username, password } = this.state;
@@ -57,13 +73,13 @@ export class Login extends Component {
 
             <div className="form-group">
               <center>
-              <button type="submit" className="btn btn-primary">
-                Login
-              </button>
+                <button type="submit" className="btn btn-primary">
+                  Login
+                </button>
               </center>
             </div>
             <p>
-              Don't have an account? <a href="/register">Register</a> 
+              Don't have an account? <a href="/register">Register</a>
             </p>
           </form>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Paper from "./Paper/Paper";
 import { makeStyles } from "@material-ui/core/styles";
-import { green, pink } from "@material-ui/core/colors";
+import { green, pink, red } from "@material-ui/core/colors";
 import Avatar from "@material-ui/core/Avatar";
 import ClearIcon from "@material-ui/icons/Clear";
 import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
@@ -47,21 +47,19 @@ function Right() {
     window.print();
   };
 
-  
-
   return (
     <div className="right">
       <div className={classes.root}>
         <Link href="#" onClick={handleDeleteDate}>
-          <Tooltip title="Delete All Data" placement="right">
+          {/* <Tooltip title="Delete All Data" placement="right">
             <Avatar className={classes.pink}>
               <ClearIcon />
             </Avatar>
-          </Tooltip>
+          </Tooltip> */}
         </Link>
         <Link href="#" onClick={handleSaveToPDF}>
           <Tooltip title="Save to PDF" placement="right">
-            <Avatar className={classes.green}>
+            <Avatar className={classes.pink}>
               <PictureAsPdfIcon />
             </Avatar>
           </Tooltip>
@@ -70,7 +68,6 @@ function Right() {
       <Paper />
     </div>
   );
-
 }
 
 export default Right;
