@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Nav } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { logout } from "../actions/auth";
 import "./Navbar.css";
-import logo from "../components/images/logo2.png";
-
-
 
 export class Navbar extends Component {
   static propTypes = {
@@ -17,20 +13,14 @@ export class Navbar extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
-    // const sjsulogo = (
-    //   <div class = "logo" styles={{ flexGrow: 2 }}>
-        
-    //      <img src={logo} alt="logo" />
-    //    </div>
-    // );
-
     const authLinks = (
-      <ul  className="navbar-nav logoutbtn">
+      <ul className="navbar-nav logoutbtn">
         <span className="navbar-text mr-3">
-          <strong class = "user">{user ? `Welcome ${user.username}!` : ""}</strong>
+          <strong class="user">
+            {user ? `Welcome ${user.username}!` : ""}
+          </strong>
         </span>
         &nbsp;&nbsp;&nbsp;
-        {/* <Nav.Link href="/testing">Testing</Nav.Link> */}
         <li>
           <button class="navbar-brand" onClick={this.props.logout}>
             Logout
@@ -47,10 +37,8 @@ export class Navbar extends Component {
     );
     return (
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
-         {/* {sjsulogo} */}
         <div className="MyResume">
           <a className="navbar-brand">MyResume</a>
-          {/* <div>{isAuthenticated ? authLinks : guestLinks2}</div> */}
         </div>
         {isAuthenticated ? authLinks : null}
       </nav>

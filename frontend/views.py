@@ -10,4 +10,4 @@ def index(request, *args, **kwargs):
 
 
 def redirect(request):
-    return HttpResponseRedirect("/welcome")
+    return HttpResponseRedirect("/login")

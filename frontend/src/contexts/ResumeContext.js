@@ -1,13 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 import fakeData from "../utils/fake_data";
-import Login from "../components/accounts/Login";
 
 export const ResumeContext = createContext();
 
-// var user = Login.useState;
-
-// console.log(user);
-// console.log(currentUser);
 const ResumeContextProvider = (props) => {
   //If there is no data stored in localStorage, then use the default object.
   var currentUser = localStorage.getItem("currUser");

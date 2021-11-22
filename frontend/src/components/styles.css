@@ -2,12 +2,12 @@
   background-color: #9b59b6 !important;
 }
 
-body {
+/* body {
   margin: 0;
   padding: 0;
   background: #f2f3f4;
   width: 98vw;
-}
+} */
 
 .app {
   display: flex;
@@ -52,16 +52,16 @@ body {
     visibility: visible;
   }
   .page {
-    /* position: fixed;
+    position: fixed;
     left: 10px;
-    top: -50px; */
-    margin-left: 1in;
-    margin-right: 1in;
+    top: -50px;
+    /* margin-left: 1in; */
+    /* margin-right: 1in; */
   }
 }
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+/* @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .app {
     display: flex;
     flex-direction: column;
@@ -81,4 +81,4 @@ body {
 
   .right .page {
   }
-}
+} */
