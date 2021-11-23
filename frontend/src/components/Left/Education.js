@@ -6,16 +6,15 @@ import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
 function Education() {
-  const { content, updateEducationData, removeFakeData } = useContext(
-    ResumeContext
-  );
-  const [btnText, setBtnText] = useState("Add");
+  const { content, updateEducationData, removeFakeData } =
+    useContext(ResumeContext);
+  const [btnText, setBtnText] = useState("Add more Course Work");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
     updateEducationData(data);
-    setBtnText("Update");
+    setBtnText("Add more Course Work");
   };
 
   return (
@@ -40,7 +39,7 @@ function Education() {
 
         <TextField
           id="outlined-basic"
-          label="City, State, Country"
+          label="City, State"
           name="city"
           variant="outlined"
           defaultValue={content.education.city}
@@ -62,7 +61,7 @@ function Education() {
 
         <TextField
           id="outlined-basic"
-          label="Graduation Year"
+          label="Graduation Month & Year"
           name="gradYear"
           variant="outlined"
           defaultValue={content.education.gradYear}
@@ -73,7 +72,18 @@ function Education() {
 
         <TextField
           id="outlined-basic"
-          label="Additional Info"
+          label="GPA"
+          name="gpa"
+          variant="outlined"
+          defaultValue={content.education.gpa}
+          inputRef={register}
+          onChange={handleSubmit(onSubmit)}
+          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
+        />
+
+        <TextField
+          id="outlined-basic"
+          label="Relevant Courses"
           name="additional"
           variant="outlined"
           defaultValue={content.education.additional}
@@ -82,14 +92,14 @@ function Education() {
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        {/* <Button
+        <Button
           variant="contained"
           color="secondary"
           type="submit"
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         >
           {btnText}
-        </Button> */}
+        </Button>
       </form>
     </div>
   );

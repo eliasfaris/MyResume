@@ -25,6 +25,34 @@ function EducationP() {
     );
   }
 
+  let hyphen;
+  if (Object.keys(contentUse.education.gradYear).length === 0) {
+    hyphen = "";
+  } else {
+    hyphen = "- ";
+  }
+
+  let hyphen2;
+  if (Object.keys(contentUse.education.city).length === 0) {
+    hyphen2 = "";
+  } else {
+    hyphen2 = "- ";
+  }
+
+  let additionalTitle;
+  if (Object.keys(contentUse.education.additional).length === 0) {
+    additionalTitle = "";
+  } else {
+    additionalTitle = "Relevant Courses";
+  }
+
+  let gpaTitle;
+  if (Object.keys(contentUse.education.gpa).length === 0) {
+    gpaTitle = "";
+  } else {
+    gpaTitle = "GPA: ";
+  }
+
   let bulletEducation;
   if (!contentUse.education.additional) {
     bulletEducation = "";
@@ -41,12 +69,23 @@ function EducationP() {
       <div className="">
         {title}
         <p>
-          <strong>{contentUse.education.institution} </strong>{" "}
+          <strong>{contentUse.education.institution} </strong>
+          {hyphen2}
           {contentUse.education.city}
         </p>
         <p>
-          {contentUse.education.major} {contentUse.education.gradYear}
+          &emsp;
+          {contentUse.education.major} {hyphen}
+          {contentUse.education.gradYear}
         </p>
+        <p>
+          &emsp;
+          {gpaTitle}
+          {contentUse.education.gpa}
+        </p>
+        &emsp;
+        {additionalTitle}
+        &emsp;
         {bulletEducation}
       </div>
     </div>

@@ -5,7 +5,7 @@ import { ResumeContext } from "../../../contexts/ResumeContext";
 function ProfessionalP() {
   const { content, control, contentFake } = useContext(ResumeContext);
 
-    //If the "control" is TRUE - use "Fake State" to show the example on the page
+  //If the "control" is TRUE - use "Fake State" to show the example on the page
   let contentUse;
   if (control) {
     contentUse = contentFake;
@@ -13,6 +13,7 @@ function ProfessionalP() {
     contentUse = content;
   }
 
+  // console.log("Length: " + Object.keys(contentUse.company1).length);
   //If there is no data, the Title of the section will not be displayed
   let title;
   if (Object.keys(contentUse.professional).length < 3) {
@@ -44,7 +45,11 @@ function ProfessionalP() {
   return (
     <div className={classes.professionalResume}>
       <div className="">
-        {title}
+        {/* <p>{title}</p> */}
+        <p>
+          {title}
+          {/* {contentUse.professional} */}
+        </p>
         <p>
           <strong>{contentUse.professional.company1}</strong>{" "}
           {contentUse.professional.local1}

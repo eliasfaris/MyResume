@@ -9,6 +9,7 @@ import myClasses from "./Left.module.css";
 import logo from "../images/logo.png";
 import { ResumeContext } from "../../contexts/ResumeContext";
 import { makeStyles } from "@material-ui/core/styles";
+import Volunteer from "./Volunteer";
 
 const useStyles = makeStyles({
   rootAdd: {
@@ -98,6 +99,14 @@ function Left() {
             >
               Skills
             </Button>
+            <br></br>
+            <Button
+              className={classes.headerLink}
+              component={Link}
+              to="/student/volunteer"
+            >
+              Volunteer
+            </Button>
           </div>
           <div>
             <hr className={myClasses.hr} />
@@ -116,6 +125,9 @@ function Left() {
                 </Route>
                 <Route path="/student/additional">
                   <AdditionalSkills />
+                </Route>
+                <Route path="/student/volunteer">
+                  <Volunteer />
                 </Route>
               </Switch>
             </div>

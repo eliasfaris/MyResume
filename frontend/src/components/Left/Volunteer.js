@@ -1,46 +1,55 @@
-import React, { useContext } from "react";
-// import Button from "@material-ui/core/Button";
+import React, { useState, useContext } from "react";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
-import { Input, TextField } from "@material-ui/core";
-import data from "../../utils/fake_data";
 
-function Header() {
-  const { content, updateHeaderData, removeFakeData } =
+function Volunteer() {
+  const { content, updateAdditionalData, removeFakeData } =
     useContext(ResumeContext);
+  const [btnText, setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
-    updateHeaderData(data);
+    updateAdditionalData(data);
+    setBtnText("Update");
   };
 
   return (
     <div className="">
-      <h2>Header</h2>
+      <h2>Volunteer Experience</h2>
       <form
         className={classes.formStyle}
         noValidate
         autoComplete="off"
-        // onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <TextField
           id="outlined-basic"
-          label="Full Name"
-          name="name"
+          label=""
+          name="skill1"
           variant="outlined"
-          defaultValue={content.header.name}
-          inputRef={register}
+          defaultValue={content.additional[0]}
+          inputRef={register({
+            max: {
+              value: 3,
+              message: "error message", // <p>error message</p>
+            },
+          })}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
+        {/*          {...register("message", {
+            required: "Required",
+          })} */}
         <TextField
           id="outlined-basic"
-          label="Phone"
-          name="phone"
+          label=""
+          name="skill2"
           variant="outlined"
-          defaultValue={content.header.phone}
+          defaultValue={content.additional[1]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -48,10 +57,10 @@ function Header() {
 
         <TextField
           id="outlined-basic"
-          label="E-mail"
-          name="email"
+          label=""
+          name="skill3"
           variant="outlined"
-          defaultValue={content.header.email}
+          defaultValue={content.additional[2]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -59,10 +68,10 @@ function Header() {
 
         <TextField
           id="outlined-basic"
-          label="Personal Links"
-          name="plink"
+          label=""
+          name="skill4"
           variant="outlined"
-          defaultValue={content.header.plink}
+          defaultValue={content.additional[3]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -70,35 +79,26 @@ function Header() {
 
         <TextField
           id="outlined-basic"
-          label="Personal Links"
-          name="plink2"
+          label=""
+          name="skill5"
           variant="outlined"
-          defaultValue={content.header.plink2}
+          defaultValue={content.additional[4]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <TextField
-          id="outlined-multiline-static"
-          label="Summary"
-          name="summary"
-          multiline
-          rows={7}
-          variant="outlined"
-          defaultValue={content.header.summary}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{
-            marginTop: 20,
-            marginBottom: 15,
-            marginLeft: 8,
-            marginRight: 8,
-          }}
-        />
+        {/* <Button
+          variant="contained"
+          color="secondary"
+          type="submit"
+          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
+        >
+          {btnText}
+        </Button> */}
       </form>
     </div>
   );
 }
 
-export default Header;
+export default Volunteer;

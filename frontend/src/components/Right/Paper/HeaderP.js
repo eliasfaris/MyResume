@@ -26,15 +26,10 @@ function HeaderP() {
         <div className={classes.contentHeader}>
           <h1 className={classes.h1Name}>{contentUse.header.name}</h1>
           <p>
-            {contentUse.header.address}
-            <br />
-            {contentUse.header.city} {contentUse.header.state}
-            {"  "}
-            {contentUse.header.zip}
-            <br />
-            {contentUse.header.phone}
-            <br />
-            {contentUse.header.email}
+            {contentUse.header.phone} {contentUse.header.email}{" "}
+          </p>
+          <p>
+            {contentUse.header.plink} {contentUse.header.plink2}
           </p>
           <br />
           <p>{contentUse.header.summary}</p>

@@ -3,6 +3,7 @@ import HeaderP from "./HeaderP";
 import ProfessionalP from "./ProfessionalP";
 import EducationP from "./EducationP";
 import AdditionalSkillsP from "./AdditionalSkillsP";
+import VolunteerP from "./VolunteerP";
 
 function Paper() {
   return (
@@ -12,7 +13,7 @@ function Paper() {
         <EducationP />
         <ProfessionalP />
         <AdditionalSkillsP />
-
+        <VolunteerP />
       </div>
     </div>
   );
