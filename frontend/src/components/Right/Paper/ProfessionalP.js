@@ -3,22 +3,40 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function ProfessionalP() {
-  const { content, control, contentFake } = useContext(ResumeContext);
+  const { content } = useContext(ResumeContext);
 
-  //If the "control" is TRUE - use "Fake State" to show the example on the page
+
   let contentUse;
-  if (control) {
-    contentUse = contentFake;
-  } else {
-    contentUse = content;
-  }
+  contentUse = content;
+
 
   // console.log("Length: " + Object.keys(contentUse.company1).length);
   //If there is no data, the Title of the section will not be displayed
+  console.log(Object.keys(contentUse.professional).length);
   let title;
-  if (Object.keys(contentUse.professional).length < 3) {
+  if (Object.keys(contentUse.professional).length ===2) {
     title = "";
-  } else {
+  } 
+  else if(contentUse.professional.company1 === "" &&
+          contentUse.professional.company2 === "" &&
+          contentUse.professional.start1 === "" &&
+          contentUse.professional.end1 === "" &&
+          contentUse.professional.start2 === "" &&
+          contentUse.professional.end2 === "" &&
+          contentUse.professional.position1 === "" &&
+          contentUse.professional.position2 === "" &&
+          contentUse.professional.local1 === "" &&
+          contentUse.professional.local2 === "" &&
+          contentUse.professional.desc1[0] === '' &&
+          contentUse.professional.desc1[1] === '' &&
+          contentUse.professional.desc1[2] === '' &&
+          contentUse.professional.desc2[0] === '' &&
+          contentUse.professional.desc2[1] === '' &&
+          contentUse.professional.desc2[2] === ''
+  ){
+    title = "";
+  }
+  else {
     title = (
       <h3>
         <strong>Work Experience</strong>

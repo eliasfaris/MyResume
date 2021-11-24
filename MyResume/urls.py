@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('frontend.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', include('accounts.urls')),
+    path('recruiter/', include('Recruiter.urls')),
 ]

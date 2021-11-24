@@ -2,7 +2,7 @@ import React from "react";
 import HeaderP from "./HeaderP";
 import ProfessionalP from "./ProfessionalP";
 import EducationP from "./EducationP";
-import AdditionalSkillsP from "./AdditionalSkillsP";
+import AbilitiesP from "./AbilitiesP";
 import VolunteerP from "./VolunteerP";
 import ProjectsP from "./ProjectsP";
 
@@ -12,7 +12,7 @@ function Paper() {
       <div size="A4" className="page">
         <HeaderP />
         <EducationP />
-        <AdditionalSkillsP />
+        <AbilitiesP />
         <ProjectsP />
         <ProfessionalP />
         <VolunteerP />

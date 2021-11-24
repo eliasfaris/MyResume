@@ -6,13 +6,12 @@ import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
 function Professional() {
-  const { content, updateProfessionalData, removeFakeData } =
+  const { content, updateProfessionalData} =
     useContext(ResumeContext);
   const [btnText, setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    removeFakeData();
     updateProfessionalData(data);
     setBtnText("Update");
   };

@@ -9,6 +9,11 @@ urlpatterns = [
     path('register', index),
     path('login', index),
     path('student/header', index),
+    path('student/education', index),
+    path('student/abilities', index),
+    path('student/', index),
+    path('student/projects', index),
     path('student/professional', index),
-
+    path('student/volunteer', index),
+    path('recruiter', index),
 ]

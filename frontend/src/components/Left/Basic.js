@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Header from "./Header";
 import Professional from "./Professional";
 import Education from "./Education";
-import AdditionalSkills from "./AdditionalSkills";
+import Abilities from "./Abilities";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import myClasses from "./Left.module.css";
@@ -45,9 +45,9 @@ const useStyles = makeStyles({
     color: "#0298B8 ",
   },
 });
-
+let expData;
 function Left() {
-  const { control, addFakeData, removeFakeData } = useContext(ResumeContext);
+  const { control } = useContext(ResumeContext);
   const classes = useStyles();
 
   return (
@@ -56,6 +56,7 @@ function Left() {
         <div styles={{ flexGrow: 2 }}>
           <img src={logo} alt="logo" />
         </div>
+        <div styles = {{flexGrow : 1}}><a href = "/recruiter"> <button color = "primary">Recruiter Page </button></a></div>
         {/* <div styles={{ flexGrow: 1 }}>{expData}</div> */}
       </div>
 
@@ -80,7 +81,7 @@ function Left() {
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/student/additional"
+              to="/student/abilities"
             >
               Abilities
             </Button>
@@ -124,8 +125,8 @@ function Left() {
                 <Route path="/student/education">
                   <Education />
                 </Route>
-                <Route path="/student/additional">
-                  <AdditionalSkills />
+                <Route path="/student/abilities">
+                  <Abilities />
                 </Route>
                 <Route path="/student/volunteer">
                   <Volunteer />

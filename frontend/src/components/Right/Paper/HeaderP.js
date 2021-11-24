@@ -3,15 +3,12 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function HeaderP() {
-  const { content, control, contentFake } = useContext(ResumeContext);
+  const { content} = useContext(ResumeContext);
 
-  //If the "control" is TRUE - use "Fake State" to show the example on the page
+ 
   let contentUse;
-  if (control) {
-    contentUse = contentFake;
-  } else {
-    contentUse = content;
-  }
+  contentUse = content;
+  
 
   let divider;
   if (Object.keys(contentUse.header).length > 0) {

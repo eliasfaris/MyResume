@@ -4,15 +4,13 @@ import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 import { Input, TextField } from "@material-ui/core";
-import data from "../../utils/fake_data";
 
 function Header() {
-  const { content, updateHeaderData, removeFakeData } =
+  const { content, updateHeaderData} =
     useContext(ResumeContext);
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    removeFakeData();
     updateHeaderData(data);
   };
 

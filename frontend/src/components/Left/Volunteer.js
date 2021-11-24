@@ -6,13 +6,12 @@ import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
 function Volunteer() {
-  const { content, updateVolunteerData, removeFakeData } =
+  const { content, updateVolunteerData } =
     useContext(ResumeContext);
   const [btnText, setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    removeFakeData();
     updateVolunteerData(data);
     setBtnText("Update");
   };
@@ -54,18 +53,6 @@ function Volunteer() {
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
-
-
-
-
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          type="submit"
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        >
-          {btnText}
-        </Button> */}
       </form>
     </div>
   );

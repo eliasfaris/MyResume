@@ -1,13 +1,9 @@
 import React, { createContext, useState, useEffect } from "react";
-import fakeData from "../utils/fake_data";
 
 export const ResumeContext = createContext();
 
 const ResumeContextProvider = (props) => {
-  //If there is no data stored in localStorage, then use the default object.
   var currentUser = localStorage.getItem("currUser");
-  console.log(currentUser);
-
   const [content, setContent] = useState(
     JSON.parse(localStorage.getItem(currentUser)) || {
       header: {},
@@ -19,11 +15,6 @@ const ResumeContextProvider = (props) => {
 
     }
   );
-
-  const [contentFake, setContentFake] = useState();
-
-  //Used to "Right" components know when to use the original state or the fake one (for the "example")
-  const [control, setControl] = useState(false);
 
   function updateHeaderData(data) {
     setContent({ ...content, header: data });
@@ -38,47 +29,29 @@ const ResumeContextProvider = (props) => {
   }
 
   function updateAdditionalData(data) {
-    setContent({ ...content, additional: data }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
+    setContent({ ...content, additional: data }); 
   }
 
   function updateVolunteerData(data) {
-    setContent({ ...content, volunteer: Object.values(data) }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
+    setContent({ ...content, volunteer: Object.values(data) });
   }
 
   function updateProjectsData(data) {
     setContent({ ...content, projects: data}); 
   }
 
-  function addFakeData() {
-    setControl(true);
-    setContentFake(fakeData);
-  }
-
   function saveUserInfo() {
     setContent();
   }
-
-  function removeFakeData() {
-    setControl(false);
-    setContentFake({
-      header: {},
-      professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
-      education: {},
-      additional: [],
-      volunteer: [],
-    });
-  }
   useEffect(() => {
     localStorage.setItem(currentUser, JSON.stringify(content));
-    // this.setState({});
   }, [content]);
 
   return (
     <ResumeContext.Provider
       value={{
         content,
-        control,
-        contentFake,
+        
         setContent,
         updateHeaderData,
         updateProfessionalData,
@@ -86,8 +59,6 @@ const ResumeContextProvider = (props) => {
         updateAdditionalData,
         updateVolunteerData,
         updateProjectsData,
-        addFakeData,
-        removeFakeData,
         saveUserInfo,
       }}
     >

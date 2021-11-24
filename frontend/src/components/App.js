@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 import Student from "./student";
+import Recruiter from "./recruiter";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
 import PrivateRoute from "./common/PrivateRoute";
@@ -38,6 +39,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/recruiter" component={Recruiter} />
             </Switch>
             <ResumeContextProvider>
               <Switch>

@@ -5,15 +5,14 @@ import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
-function AdditionalSkills() {
-  const { content, updateAdditionalData, removeFakeData } = useContext(
+function Abilities() {
+  const { content, updateAdditionalData } = useContext(
     ResumeContext
   );
   const [btnText, setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    removeFakeData();
     updateAdditionalData(data);
     setBtnText("Update");
   };
@@ -44,15 +43,8 @@ function AdditionalSkills() {
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
-      </form>
           
           <hr />
-      <form
-        className={classes.formStyle}
-        noValidate
-        autoComplete="off"
-        onSubmit={handleSubmit(onSubmit)}
-      >
         
         <h4>Tools</h4>
         <TextField
@@ -71,9 +63,29 @@ function AdditionalSkills() {
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
+
+        <hr />
+        
+        <h4>Certifications</h4>
+        <TextField
+          id="outlined-basic"
+          label="Certifications (certification1, ...)"
+          name="certifications"
+          variant="outlined"
+          defaultValue={content.certifications}
+          inputRef={register({
+            max: {
+              value: 3,
+              message: "error message" // <p>error message</p>
+              
+            },
+          })}
+          onChange={handleSubmit(onSubmit)}
+          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
+        />
       </form>
     </div>
   );
 }
 
-export default AdditionalSkills;
+export default Abilities;

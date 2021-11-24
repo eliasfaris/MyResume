@@ -3,21 +3,23 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function VolunteerP() {
-  const { content, control, contentFake } = useContext(ResumeContext);
+  const { content } = useContext(ResumeContext);
 
-  //If the "control" is TRUE - use "Fake State" to show the example on the page
+ 
   let contentUse;
-  if (control) {
-    contentUse = contentFake;
-  } else {
-    contentUse = content;
-  }
+  contentUse = content;
+  
 
   //If there is no data, the Title of the section will not be displayed
   let title;
   if (contentUse.volunteer.length === 0) {
     title = "";
-  } else {
+  }
+  else if(contentUse.volunteer[0] === "" && 
+          contentUse.volunteer[1] === ""){
+          title = "";
+  }
+   else {
     title = (
       <h3>
         <strong>Volunteer Experience</strong>

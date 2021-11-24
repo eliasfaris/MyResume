@@ -6,12 +6,11 @@ import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
 function Education() {
-  const { content, updateEducationData, removeFakeData } =
+  const { content, updateEducationData } =
     useContext(ResumeContext);
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    removeFakeData();
     updateEducationData(data);
   };
 
@@ -74,6 +73,17 @@ function Education() {
           name="gpa"
           variant="outlined"
           defaultValue={content.education.gpa}
+          inputRef={register}
+          onChange={handleSubmit(onSubmit)}
+          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
+        />
+
+          <TextField
+          id="outlined-basic"
+          label="Achievements (achievement1, ...)"
+          name="achievements"
+          variant="outlined"
+          defaultValue={content.education.achievements}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}

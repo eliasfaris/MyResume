@@ -3,22 +3,34 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function ProjectsP() {
-  const { content, control, contentFake } = useContext(ResumeContext);
+  const { content } = useContext(ResumeContext);
 
-  //If the "control" is TRUE - use "Fake State" to show the example on the page
   let contentUse;
-  if (control) {
-    contentUse = contentFake;
-  } else {
-    contentUse = content;
-  }
+  contentUse = content;
+  
 
   // console.log("Length: " + Object.keys(contentUse.company1).length);
   //If there is no data, the Title of the section will not be displayed
   let title;
-  if (Object.keys(contentUse.projects).length < 3) {
+  if (Object.keys(contentUse.projects).length === 2) {
     title = "";
-  } else {
+  } 
+  else if(contentUse.projects.project1 === "" &&
+          contentUse.projects.project2 === "" &&
+          contentUse.projects.finish1 === "" &&
+          contentUse.projects.finish2 === "" &&
+          contentUse.projects.position1 === "" &&
+          contentUse.projects.position2 === "" &&
+          contentUse.projects.desc1[0] === "" &&
+          contentUse.projects.desc1[1] === "" &&
+          contentUse.projects.desc1[2] === "" &&
+          contentUse.projects.desc2[0] === "" &&
+          contentUse.projects.desc2[1] === "" &&
+          contentUse.projects.desc2[2] === ""
+  ){
+    title = "";
+  }
+  else {
     title = (
       <h3>
         <strong>Projects</strong>

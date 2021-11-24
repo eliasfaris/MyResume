@@ -2,21 +2,22 @@ import React, { useContext } from "react";
 import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
-function AdditionalSkillsP() {
-  const { content, control, contentFake } = useContext(ResumeContext);
+function AbilitiesP() {
+  const { content } = useContext(ResumeContext);
 
-  //If the "control" is TRUE - use "Fake State" to show the example on the page
   let contentUse;
-  if (control) {
-    contentUse = contentFake;
-  } else {
-    contentUse = content;
-  }
+  contentUse = content;
+  
 
   //If there is no data, the Title of the section will not be displayed
   let title;
-  if (contentUse.additional.length === 0) {
+  if(contentUse.additional.length === 0){
     title = "";
+  }
+  else if (contentUse.additional.skills === "" && 
+           contentUse.additional.tools === "" && 
+            contentUse.additional.certifications === "") {
+      title = "";
   } else {
     title = (
       <h3>
@@ -24,10 +25,6 @@ function AdditionalSkillsP() {
       </h3>
     );
   }
-
-
-
-
   let skillTitle;
   if (!contentUse.additional.skills) {
     skillTitle = "";
@@ -36,10 +33,17 @@ function AdditionalSkillsP() {
   }
 
   let toolTitle;
-  if (!contentUse.additional.skills) {
+  if (!contentUse.additional.tools) {
     toolTitle = "";
   } else {
     toolTitle = "Tools: ";
+  }
+
+  let certTitle;
+  if (!contentUse.additional.certifications) {
+    certTitle = "";
+  } else {
+    certTitle = "Certifications: ";
   }
   return (
     <div className={classes.professionalResume}>
@@ -55,10 +59,15 @@ function AdditionalSkillsP() {
         <strong>{toolTitle}</strong>
           {content.additional.tools}
         </p>
-        {/* <ul>{bulletsData}</ul> */}
+        <p>
+        &emsp;
+        <strong>{certTitle}</strong>
+          {content.additional.certifications}
+        </p>
+        
       </div>
     </div>
   );
 }
 
-export default AdditionalSkillsP;
+export default AbilitiesP;
