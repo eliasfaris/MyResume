@@ -8,13 +8,11 @@ import { ResumeContext } from "../../contexts/ResumeContext";
 function Education() {
   const { content, updateEducationData, removeFakeData } =
     useContext(ResumeContext);
-  const [btnText, setBtnText] = useState("Add more Course Work");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
     updateEducationData(data);
-    setBtnText("Add more Course Work");
   };
 
   return (
@@ -83,7 +81,7 @@ function Education() {
 
         <TextField
           id="outlined-basic"
-          label="Relevant Courses"
+          label="Relevant Courses (class 1, class 2, ...)"
           name="additional"
           variant="outlined"
           defaultValue={content.education.additional}
@@ -91,15 +89,6 @@ function Education() {
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
-
-        <Button
-          variant="contained"
-          color="secondary"
-          type="submit"
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        >
-          {btnText}
-        </Button>
       </form>
     </div>
   );

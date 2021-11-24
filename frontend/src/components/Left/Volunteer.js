@@ -6,14 +6,14 @@ import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
 function Volunteer() {
-  const { content, updateAdditionalData, removeFakeData } =
+  const { content, updateVolunteerData, removeFakeData } =
     useContext(ResumeContext);
   const [btnText, setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
-    updateAdditionalData(data);
+    updateVolunteerData(data);
     setBtnText("Update");
   };
 
@@ -31,7 +31,7 @@ function Volunteer() {
           label=""
           name="skill1"
           variant="outlined"
-          defaultValue={content.additional[0]}
+          defaultValue={content.volunteer[0]}
           inputRef={register({
             max: {
               value: 3,
@@ -49,7 +49,7 @@ function Volunteer() {
           label=""
           name="skill2"
           variant="outlined"
-          defaultValue={content.additional[1]}
+          defaultValue={content.volunteer[1]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -60,7 +60,7 @@ function Volunteer() {
           label=""
           name="skill3"
           variant="outlined"
-          defaultValue={content.additional[2]}
+          defaultValue={content.volunteer[2]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -71,7 +71,7 @@ function Volunteer() {
           label=""
           name="skill4"
           variant="outlined"
-          defaultValue={content.additional[3]}
+          defaultValue={content.volunteer[3]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -82,7 +82,7 @@ function Volunteer() {
           label=""
           name="skill5"
           variant="outlined"
-          defaultValue={content.additional[4]}
+          defaultValue={content.volunteer[4]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}

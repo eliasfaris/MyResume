@@ -15,7 +15,7 @@ function VolunteerP() {
 
   //If there is no data, the Title of the section will not be displayed
   let title;
-  if (contentUse.additional.length === 0) {
+  if (contentUse.volunteer.length === 0) {
     title = "";
   } else {
     title = (
@@ -25,7 +25,7 @@ function VolunteerP() {
     );
   }
 
-  let bulletsData = contentUse.additional.map((el, index) => {
+  let bulletsData = contentUse.volunteer.map((el, index) => {
     if (el === "") {
       return "";
     } else {

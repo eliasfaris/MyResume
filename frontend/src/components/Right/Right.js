@@ -40,6 +40,7 @@ function Right() {
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
       education: {},
       additional: [],
+      volunteer: [],
     });
   };
   const handleSaveToPDF = (event) => {

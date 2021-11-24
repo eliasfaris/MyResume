@@ -45,11 +45,7 @@ function ProfessionalP() {
   return (
     <div className={classes.professionalResume}>
       <div className="">
-        {/* <p>{title}</p> */}
-        <p>
-          {title}
-          {/* {contentUse.professional} */}
-        </p>
+        {title}
         <p>
           <strong>{contentUse.professional.company1}</strong>{" "}
           {contentUse.professional.local1}

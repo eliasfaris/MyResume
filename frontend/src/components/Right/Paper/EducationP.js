@@ -26,43 +26,37 @@ function EducationP() {
   }
 
   let hyphen;
-  if (Object.keys(contentUse.education.gradYear).length === 0) {
+  if (!contentUse.education.gradYear) {
     hyphen = "";
   } else {
     hyphen = "- ";
   }
 
   let hyphen2;
-  if (Object.keys(contentUse.education.city).length === 0) {
+  if (!contentUse.education.city) {
     hyphen2 = "";
   } else {
     hyphen2 = "- ";
   }
 
   let additionalTitle;
-  if (Object.keys(contentUse.education.additional).length === 0) {
+  if (!contentUse.education.additional) {
     additionalTitle = "";
   } else {
-    additionalTitle = "Relevant Courses";
+    additionalTitle = "Relevant Courses: ";
   }
 
   let gpaTitle;
-  if (Object.keys(contentUse.education.gpa).length === 0) {
+  if (!contentUse.education.gpa) {
     gpaTitle = "";
   } else {
     gpaTitle = "GPA: ";
   }
-
-  let bulletEducation;
-  if (!contentUse.education.additional) {
-    bulletEducation = "";
-  } else {
-    bulletEducation = (
-      <ul>
-        <li>{contentUse.education.additional}</li>
-      </ul>
-    );
-  }
+  // if (Object.keys(contentUse.education.gpa).length === 0) {
+  //   gpaTitle = "";
+  // } else {
+  //   gpaTitle = "GPA: ";
+  // }
 
   return (
     <div className={classes.professionalResume}>
@@ -84,9 +78,8 @@ function EducationP() {
           {contentUse.education.gpa}
         </p>
         &emsp;
-        {additionalTitle}
-        &emsp;
-        {bulletEducation}
+        <strong>{additionalTitle}</strong>
+        {contentUse.education.additional}
       </div>
     </div>
   );

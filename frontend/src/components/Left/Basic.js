@@ -70,7 +70,7 @@ function Left() {
 
       <div className="">
         <Router>
-          <div className={myClasses.topLeft}>
+          <div className={myClasses.topLeft1}>
             <Button
               className={classes.headerLink}
               component={Link}
@@ -100,6 +100,22 @@ function Left() {
               Skills
             </Button>
             <br></br>
+          </div>
+          <div className={myClasses.topLeft1}>
+            <Button
+              className={classes.headerLink}
+              component={Link}
+              to="/student/volunteer"
+            >
+              Volunteer
+            </Button>
+            <Button
+              className={classes.headerLink}
+              component={Link}
+              to="/student/volunteer"
+            >
+              Volunteer
+            </Button>
             <Button
               className={classes.headerLink}
               component={Link}

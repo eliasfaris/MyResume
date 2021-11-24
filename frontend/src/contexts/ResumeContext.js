@@ -14,6 +14,7 @@ const ResumeContextProvider = (props) => {
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
       education: {},
       additional: [],
+      volunteer: [],
     }
   );
 
@@ -38,6 +39,10 @@ const ResumeContextProvider = (props) => {
     setContent({ ...content, additional: Object.values(data) }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
   }
 
+  function updateVolunteerData(data) {
+    setContent({ ...content, volunteer: Object.values(data) }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
+  }
+
   function addFakeData() {
     setControl(true);
     setContentFake(fakeData);
@@ -54,6 +59,7 @@ const ResumeContextProvider = (props) => {
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
       education: {},
       additional: [],
+      volunteer: [],
     });
   }
   useEffect(() => {
@@ -72,6 +78,7 @@ const ResumeContextProvider = (props) => {
         updateProfessionalData,
         updateEducationData,
         updateAdditionalData,
+        updateVolunteerData,
         addFakeData,
         removeFakeData,
         saveUserInfo,
