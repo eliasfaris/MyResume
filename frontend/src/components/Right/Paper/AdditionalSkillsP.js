@@ -20,23 +20,42 @@ function AdditionalSkillsP() {
   } else {
     title = (
       <h3>
-        <strong>Additional Skills</strong>
+        <strong>Abilities</strong>
       </h3>
     );
   }
 
-  let bulletsData = contentUse.additional.map((el, index) => {
-    if (el === "") {
-      return "";
-    } else {
-      return <li key={index}>{el}</li>;
-    }
-  });
+
+
+
+  let skillTitle;
+  if (!contentUse.additional.skills) {
+    skillTitle = "";
+  } else {
+    skillTitle = "Skills: ";
+  }
+
+  let toolTitle;
+  if (!contentUse.additional.skills) {
+    toolTitle = "";
+  } else {
+    toolTitle = "Tools: ";
+  }
   return (
     <div className={classes.professionalResume}>
       <div className="">
         {title}
-        <ul>{bulletsData}</ul>
+        <p>
+          &emsp;
+          <strong>{skillTitle}</strong>
+          {content.additional.skills}
+        </p>
+        <p>
+        &emsp;
+        <strong>{toolTitle}</strong>
+          {content.additional.tools}
+        </p>
+        {/* <ul>{bulletsData}</ul> */}
       </div>
     </div>
   );

@@ -20,19 +20,20 @@ function AdditionalSkills() {
 
   return (
     <div className="">
-      <h2>Additional Skills</h2>
+      <h2>Abilities</h2>
       <form
         className={classes.formStyle}
         noValidate
         autoComplete="off"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <h4>Skills</h4>
         <TextField
           id="outlined-basic"
-          label=""
-          name="skill1"
+          label="Skills (skill1, skill2, ...)"
+          name="skills"
           variant="outlined"
-          defaultValue={content.additional[0]}
+          defaultValue={content.skills}
           inputRef={register({
             max: {
               value: 3,
@@ -43,61 +44,33 @@ function AdditionalSkills() {
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
-{/*          {...register("message", {
-            required: "Required",
-          })} */}
+      </form>
+          
+          <hr />
+      <form
+        className={classes.formStyle}
+        noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        
+        <h4>Tools</h4>
         <TextField
           id="outlined-basic"
-          label=""
-          name="skill2"
+          label="Tools (tool1, tool2, ...)"
+          name="tools"
           variant="outlined"
-          defaultValue={content.additional[1]}
-          inputRef={register}
+          defaultValue={content.tools}
+          inputRef={register({
+            max: {
+              value: 3,
+              message: "error message" // <p>error message</p>
+              
+            },
+          })}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
-
-        <TextField
-          id="outlined-basic"
-          label=""
-          name="skill3"
-          variant="outlined"
-          defaultValue={content.additional[2]}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        <TextField
-          id="outlined-basic"
-          label=""
-          name="skill4"
-          variant="outlined"
-          defaultValue={content.additional[3]}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        <TextField
-          id="outlined-basic"
-          label=""
-          name="skill5"
-          variant="outlined"
-          defaultValue={content.additional[4]}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          type="submit"
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        >
-          {btnText}
-        </Button> */}
       </form>
     </div>
   );

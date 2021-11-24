@@ -4,6 +4,7 @@ import ProfessionalP from "./ProfessionalP";
 import EducationP from "./EducationP";
 import AdditionalSkillsP from "./AdditionalSkillsP";
 import VolunteerP from "./VolunteerP";
+import ProjectsP from "./ProjectsP";
 
 function Paper() {
   return (
@@ -11,8 +12,9 @@ function Paper() {
       <div size="A4" className="page">
         <HeaderP />
         <EducationP />
-        <ProfessionalP />
         <AdditionalSkillsP />
+        <ProjectsP />
+        <ProfessionalP />
         <VolunteerP />
       </div>
     </div>

@@ -12,9 +12,11 @@ const ResumeContextProvider = (props) => {
     JSON.parse(localStorage.getItem(currentUser)) || {
       header: {},
       professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
+      projects: { desc1: ["", "", ""], desc2: ["", "", ""] },
       education: {},
       additional: [],
       volunteer: [],
+
     }
   );
 
@@ -36,11 +38,15 @@ const ResumeContextProvider = (props) => {
   }
 
   function updateAdditionalData(data) {
-    setContent({ ...content, additional: Object.values(data) }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
+    setContent({ ...content, additional: data }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
   }
 
   function updateVolunteerData(data) {
     setContent({ ...content, volunteer: Object.values(data) }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
+  }
+
+  function updateProjectsData(data) {
+    setContent({ ...content, projects: data}); 
   }
 
   function addFakeData() {
@@ -79,6 +85,7 @@ const ResumeContextProvider = (props) => {
         updateEducationData,
         updateAdditionalData,
         updateVolunteerData,
+        updateProjectsData,
         addFakeData,
         removeFakeData,
         saveUserInfo,

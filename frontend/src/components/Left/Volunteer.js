@@ -28,8 +28,8 @@ function Volunteer() {
       >
         <TextField
           id="outlined-basic"
-          label=""
-          name="skill1"
+          label="Volunteer 1"
+          name="volunteer1"
           variant="outlined"
           defaultValue={content.volunteer[0]}
           inputRef={register({
@@ -46,8 +46,8 @@ function Volunteer() {
           })} */}
         <TextField
           id="outlined-basic"
-          label=""
-          name="skill2"
+          label="Volunteer 2"
+          name="volunteer2"
           variant="outlined"
           defaultValue={content.volunteer[1]}
           inputRef={register}
@@ -55,38 +55,8 @@ function Volunteer() {
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
 
-        <TextField
-          id="outlined-basic"
-          label=""
-          name="skill3"
-          variant="outlined"
-          defaultValue={content.volunteer[2]}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
 
-        <TextField
-          id="outlined-basic"
-          label=""
-          name="skill4"
-          variant="outlined"
-          defaultValue={content.volunteer[3]}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
 
-        <TextField
-          id="outlined-basic"
-          label=""
-          name="skill5"
-          variant="outlined"
-          defaultValue={content.volunteer[4]}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
 
         {/* <Button
           variant="contained"

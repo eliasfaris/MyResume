@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
-function ProfessionalP() {
+function ProjectsP() {
   const { content, control, contentFake } = useContext(ResumeContext);
 
   //If the "control" is TRUE - use "Fake State" to show the example on the page
@@ -16,17 +16,17 @@ function ProfessionalP() {
   // console.log("Length: " + Object.keys(contentUse.company1).length);
   //If there is no data, the Title of the section will not be displayed
   let title;
-  if (Object.keys(contentUse.professional).length < 3) {
+  if (Object.keys(contentUse.projects).length < 3) {
     title = "";
   } else {
     title = (
       <h3>
-        <strong>Work Experience</strong>
+        <strong>Projects</strong>
       </h3>
     );
   }
 
-  let bulletProfessional1 = contentUse.professional.desc1.map((el, index) => {
+  let bulletproject1 = contentUse.projects.desc1.map((el, index) => {
     if (el === "") {
       return "";
     } else {
@@ -34,7 +34,7 @@ function ProfessionalP() {
     }
   });
 
-  let bulletProfessional2 = contentUse.professional.desc2.map((el, index) => {
+  let bulletproject2 = contentUse.projects.desc2.map((el, index) => {
     if (el === "") {
       return "";
     } else {
@@ -43,30 +43,32 @@ function ProfessionalP() {
   });
 
   return (
-    <div className={classes.professionalResume}>
+    <div className={classes.projectsResume}>
       <div className="">
         {title}
         <p>
-          <strong>{contentUse.professional.company1}</strong>{" "}
-          {contentUse.professional.local1}
+          <strong>{contentUse.projects.project1}</strong>{" "}
+          {contentUse.projects.local1}
         </p>
         <p>
-          {contentUse.professional.position1} {contentUse.professional.start1}{" "}
-          {contentUse.professional.end1}
+          {contentUse.projects.position1}<br></br>
+          &emsp;
+          {contentUse.projects.finish1}
         </p>
-        <ul>{bulletProfessional1}</ul>
+        <ul>{bulletproject1}</ul>
         <p>
-          <strong>{contentUse.professional.company2}</strong>{" "}
-          {contentUse.professional.local2}
+          <strong>{contentUse.projects.project2}</strong>{" "}
+          {contentUse.projects.local2}
         </p>
         <p>
-          {contentUse.professional.position2} {contentUse.professional.start2}{" "}
-          {contentUse.professional.end2}
+          {contentUse.projects.position2}<br></br>
+          &emsp;
+          {contentUse.projects.finish2}
         </p>
-        <ul>{bulletProfessional2}</ul>
+        <ul>{bulletproject2}</ul>
       </div>
     </div>
   );
 }
 
-export default ProfessionalP;
+export default ProjectsP;

@@ -2,13 +2,6 @@
   background-color: #9b59b6 !important;
 }
 
-/* body {
-  margin: 0;
-  padding: 0;
-  background: #f2f3f4;
-  width: 98vw;
-} */
-
 .app {
   display: flex;
   min-height: 100vh;
@@ -16,8 +9,10 @@
 
 .left {
   background-color: #fff;
-  width: 25vw;
+  width: 30vw;
   box-shadow: 0 0 0.5cm #7b7d7d;
+  margin-bottom: 15cm;
+  margin-top: 10px;
 }
 
 .right {
@@ -38,12 +33,13 @@
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm #7b7d7d;
   width: 21cm;
-  height: 29.7cm;
+  height: 40cm;
 }
 
 @media print {
   @page {
-    margin: 0;
+    size: A5;
+    margin: 10px;
   }
   body * {
     visibility: hidden;
@@ -52,33 +48,12 @@
     visibility: visible;
   }
   .page {
-    position: fixed;
-    left: 10px;
+    position: fixed; 
+     left: 10px;
+    right: 60px;
     top: -50px;
-    /* margin-left: 1in; */
-    /* margin-right: 1in; */
+    /* margin: 100px; 
+    margin-left: 15px;
+    margin-right: 15px;  */
   }
 }
-
-/* Smartphones (portrait and landscape) ----------- */
-/* @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-
-  .left {
-    background-color: #fff;
-    width: 100vw;
-    box-shadow: 0 0 0.5cm #7b7d7d;
-  }
-
-  .right {
-    height: 10vh;
-    font-family: "Lora", serif;
-  }
-
-  .right .page {
-  }
-} */

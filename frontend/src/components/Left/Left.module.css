@@ -24,14 +24,14 @@ img {
 
 .topLeft1 {
   display: flex;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
   justify-content: space-evenly;
 }
 .topLeft2 {
   display: flex;
-  /* padding: 15px; */
-  /* justify-content: space-evenly; */
+  padding: 5px;
+  justify-content: space-evenly;
 }
 
 .headerLeft {

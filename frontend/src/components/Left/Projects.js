@@ -5,44 +5,33 @@ import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
-function Professional() {
-  const { content, updateProfessionalData, removeFakeData } =
+function Projects() {
+  const { content, updateProjectsData, removeFakeData } =
     useContext(ResumeContext);
   const [btnText, setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
-    updateProfessionalData(data);
+    updateProjectsData(data);
     setBtnText("Update");
   };
   return (
     <div className="">
-      <h2>Work Experience</h2>
+      <h2>Projects</h2>
       <form
         className={classes.formStyle}
         noValidate
         autoComplete="off"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h4>Company 1</h4>
+        <h4>Project 1</h4>
         <TextField
           id="outlined-basic"
-          label="Company"
-          name="company1"
+          label="Project Name"
+          name="project1"
           variant="outlined"
-          defaultValue={content.professional.company1}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        <TextField
-          id="outlined-basic"
-          label="City, State, Country"
-          name="local1"
-          variant="outlined"
-          defaultValue={content.professional.local1}
+          defaultValue={content.projects.project1}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -53,7 +42,7 @@ function Professional() {
           label="Position"
           name="position1"
           variant="outlined"
-          defaultValue={content.professional.position1}
+          defaultValue={content.projects.position1}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -61,21 +50,10 @@ function Professional() {
 
         <TextField
           id="outlined-basic"
-          label="Start MM/YYYY"
-          name="start1"
+          label="Month & Year"
+          name="finish1"
           variant="outlined"
-          defaultValue={content.professional.start1}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        <TextField
-          id="outlined-basic"
-          label="End MM/YYYY"
-          name="end1"
-          variant="outlined"
-          defaultValue={content.professional.end1}
+          defaultValue={content.projects.finish1}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -86,7 +64,7 @@ function Professional() {
           label="Description"
           name="desc1[0]"
           variant="outlined"
-          defaultValue={content.professional.desc1[0]}
+          defaultValue={content.projects.desc1[0]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -96,7 +74,7 @@ function Professional() {
           label="Description"
           name="desc1[1]"
           variant="outlined"
-          defaultValue={content.professional.desc1[1]}
+          defaultValue={content.projects.desc1[1]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -106,7 +84,7 @@ function Professional() {
           label="Description"
           name="desc1[2]"
           variant="outlined"
-          defaultValue={content.professional.desc1[2]}
+          defaultValue={content.projects.desc1[2]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{
@@ -119,25 +97,14 @@ function Professional() {
 
         <hr />
 
-        <h4>Company 2</h4>
+        <h4>Project 2</h4>
 
         <TextField
           id="outlined-basic"
-          label="Company"
-          name="company2"
+          label="Project 2"
+          name="project2"
           variant="outlined"
-          defaultValue={content.professional.company2}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        <TextField
-          id="outlined-basic"
-          label="City, State, Country"
-          name="local2"
-          variant="outlined"
-          defaultValue={content.professional.local2}
+          defaultValue={content.projects.project2}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -148,7 +115,7 @@ function Professional() {
           label="Position"
           name="position2"
           variant="outlined"
-          defaultValue={content.professional.position2}
+          defaultValue={content.projects.position2}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -156,21 +123,10 @@ function Professional() {
 
         <TextField
           id="outlined-basic"
-          label="Start MM/YYYY"
-          name="start2"
+          label="Month & Year"
+          name="finish2"
           variant="outlined"
-          defaultValue={content.professional.start2}
-          inputRef={register}
-          onChange={handleSubmit(onSubmit)}
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        />
-
-        <TextField
-          id="outlined-basic"
-          label="End MM/YYYY"
-          name="end2"
-          variant="outlined"
-          defaultValue={content.professional.end2}
+          defaultValue={content.projects.finish2}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -181,7 +137,7 @@ function Professional() {
           label="Description"
           name="desc2[0]"
           variant="outlined"
-          defaultValue={content.professional.desc2[0]}
+          defaultValue={content.projects.desc2[0]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -191,7 +147,7 @@ function Professional() {
           label="Description"
           name="desc2[1]"
           variant="outlined"
-          defaultValue={content.professional.desc2[1]}
+          defaultValue={content.projects.desc2[1]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -201,7 +157,7 @@ function Professional() {
           label="Description"
           name="desc2[2]"
           variant="outlined"
-          defaultValue={content.professional.desc2[2]}
+          defaultValue={content.projects.desc2[2]}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -220,4 +176,4 @@ function Professional() {
   );
 }
 
-export default Professional;
+export default Projects;

@@ -10,6 +10,7 @@ import logo from "../images/logo.png";
 import { ResumeContext } from "../../contexts/ResumeContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Volunteer from "./Volunteer";
+import Projects from "./Projects";
 
 const useStyles = makeStyles({
   rootAdd: {
@@ -49,16 +50,6 @@ function Left() {
   const { control, addFakeData, removeFakeData } = useContext(ResumeContext);
   const classes = useStyles();
 
-  // function useFakeData(e) {
-  //   e.preventDefault();
-  //   addFakeData();
-  // }
-
-  // function clearFakeData(e) {
-  //   e.preventDefault();
-  //   removeFakeData();
-  // }
-
   return (
     <div className="left">
       <div className={myClasses.headerLeft}>
@@ -85,36 +76,30 @@ function Left() {
             >
               Education
             </Button>
-            <Button
-              className={classes.headerLink}
-              component={Link}
-              to="/student/professional"
-            >
-              Experience
-            </Button>
+
             <Button
               className={classes.headerLink}
               component={Link}
               to="/student/additional"
             >
-              Skills
+              Abilities
             </Button>
             <br></br>
           </div>
           <div className={myClasses.topLeft1}>
-            <Button
+          <Button
               className={classes.headerLink}
               component={Link}
-              to="/student/volunteer"
+              to="/student/projects"
             >
-              Volunteer
+              Projects
             </Button>
-            <Button
+          <Button
               className={classes.headerLink}
               component={Link}
-              to="/student/volunteer"
+              to="/student/professional"
             >
-              Volunteer
+              Experience
             </Button>
             <Button
               className={classes.headerLink}
@@ -144,6 +129,9 @@ function Left() {
                 </Route>
                 <Route path="/student/volunteer">
                   <Volunteer />
+                </Route>
+                <Route path="/student/projects">
+                  <Projects />
                 </Route>
               </Switch>
             </div>
