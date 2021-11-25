@@ -7,12 +7,30 @@
   min-height: 100vh;
 }
 
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
 .left {
   background-color: #fff;
   width: 30vw;
   box-shadow: 0 0 0.5cm #7b7d7d;
   margin-bottom: 15cm;
   margin-top: 10px;
+}
+
+.middle {
+  background-color: #fff;
+  /* width: 75vw; */
+  box-shadow: 0 0 0.5cm #7b7d7d;
+  margin: 0 auto;
+  width: 15cm;
+  height: 13cm;
+  margin-top: 50px;
+  margin-bottom: 0.5cm;
+  /* margin-bottom: 15cm; */
+  /* margin-top: 10px; */
 }
 
 .right {
@@ -48,8 +66,8 @@
     visibility: visible;
   }
   .page {
-    position: fixed; 
-     left: 10px;
+    position: fixed;
+    left: 10px;
     right: 60px;
     top: -50px;
     /* margin: 100px; 

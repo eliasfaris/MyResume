@@ -13,7 +13,7 @@ import Volunteer from "./Volunteer";
 import Projects from "./Projects";
 
 const useStyles = makeStyles({
-  rootAdd: {
+  recruiterBtn: {
     background: "linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)",
     border: 0,
     borderRadius: 3,
@@ -21,21 +21,7 @@ const useStyles = makeStyles({
     color: "white",
     height: 30,
     textAlign: "center",
-    fontSize: 10,
-    marginTop: 15,
-    marginRight: 20,
-    fontWeight: 700,
-  },
-  rootRemove: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    border: 0,
-    borderRadius: 3,
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    color: "white",
-    height: 30,
-    textAlign: "center",
-    minWidth: 130,
-    fontSize: 10,
+    fontSize: 15,
     marginTop: 15,
     marginRight: 20,
     fontWeight: 700,
@@ -45,18 +31,33 @@ const useStyles = makeStyles({
     color: "#0298B8 ",
   },
 });
-let expData;
+console.log(localStorage.getItem("userInfo"));
+// this.onClick = this.onClick.bind(this);
+// onClick = (e) => {
+//   // this.props.login(this.state.username, this.state.password),
+//   localStorage.setItem("userInfo", JSON.stringify(this.state.username));
+// };
+
 function Left() {
   const { control } = useContext(ResumeContext);
   const classes = useStyles();
-
+  let recruiterPage;
+  recruiterPage = (
+    <button
+      color="primary"
+      // onClick={this.onClick}
+      className={classes.recruiterBtn}
+    >
+      <a href="/recruiter">Recruiter Page </a>
+    </button>
+  );
   return (
     <div className="left">
       <div className={myClasses.headerLeft}>
         <div styles={{ flexGrow: 2 }}>
           <img src={logo} alt="logo" />
         </div>
-        <div styles = {{flexGrow : 1}}><a href = "/recruiter"> <button color = "primary">Recruiter Page </button></a></div>
+        <div styles={{ flexGrow: 1 }}>{recruiterPage}</div>
         {/* <div styles={{ flexGrow: 1 }}>{expData}</div> */}
       </div>
 
@@ -88,14 +89,14 @@ function Left() {
             <br></br>
           </div>
           <div className={myClasses.topLeft1}>
-          <Button
+            <Button
               className={classes.headerLink}
               component={Link}
               to="/student/projects"
             >
               Projects
             </Button>
-          <Button
+            <Button
               className={classes.headerLink}
               component={Link}
               to="/student/professional"
