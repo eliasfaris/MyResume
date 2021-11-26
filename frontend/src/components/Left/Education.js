@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
@@ -91,7 +90,7 @@ function Education() {
 
         <TextField
           id="outlined-basic"
-          label="Relevant Courses (class 1, class 2, ...)"
+          label="Relevant Courses (course1, ...)"
           name="additional"
           variant="outlined"
           defaultValue={content.education.additional}

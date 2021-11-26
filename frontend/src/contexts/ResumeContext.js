@@ -3,18 +3,17 @@ import React, { createContext, useState, useEffect } from "react";
 export const ResumeContext = createContext();
 
 const ResumeContextProvider = (props) => {
-  var currentUser = localStorage.getItem("currUser");
-  console.log(currentUser);
-  const [content, setContent] = useState(
-    JSON.parse(localStorage.getItem(currentUser))
-    // || {
-    //   header: {},
-    //   professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
-    //   projects: { desc1: ["", "", ""], desc2: ["", "", ""] },
-    //   education: {},
-    //   additional: [],
-    //   volunteer: [],
-    // }
+   var currentUser = localStorage.getItem("currUser"); 
+
+   const [content, setContent] = useState(
+    JSON.parse(localStorage.getItem(currentUser)) || {
+      header: {},
+      professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
+      projects: { desc1: ["", "", ""], desc2: ["", "", ""] },
+      education: {},
+      additional: [],
+      volunteer: [],
+    }
   );
 
   function updateHeaderData(data) {
@@ -45,16 +44,6 @@ const ResumeContextProvider = (props) => {
     setContent();
   }
 
-  console.log("Line 47");
-  console.log(localStorage.getItem(currentUser));
-
-  useEffect(() => {
-    const savedData = localStorage.getItem(currentUser);
-    console.log(savedData);
-    if (savedData) {
-      setContent(JSON.parse(savedData));
-    }
-  }, []);
   useEffect(() => {
     localStorage.setItem(currentUser, JSON.stringify(content));
   }, [content]);
@@ -63,7 +52,6 @@ const ResumeContextProvider = (props) => {
     <ResumeContext.Provider
       value={{
         content,
-
         setContent,
         updateHeaderData,
         updateProfessionalData,
@@ -74,7 +62,6 @@ const ResumeContextProvider = (props) => {
         saveUserInfo,
       }}
     >
-      {/* This refers to the children that this provider/components wraps. */}
       {props.children}
     </ResumeContext.Provider>
   );

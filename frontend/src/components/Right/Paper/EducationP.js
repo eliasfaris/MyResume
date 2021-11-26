@@ -24,7 +24,6 @@ function EducationP() {
         title = "";
     }
   else{
-    console.log(contentUse.education);
     title = (
       <h3>
         <strong>Education</strong>

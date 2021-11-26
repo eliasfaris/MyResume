@@ -8,8 +8,6 @@ function ProjectsP() {
   let contentUse;
   contentUse = content;
   
-
-  // console.log("Length: " + Object.keys(contentUse.company1).length);
   //If there is no data, the Title of the section will not be displayed
   let title;
   if (Object.keys(contentUse.projects).length === 2) {

@@ -23,22 +23,10 @@ export class Login extends Component {
 
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
-  shouldRefresh = () => {
-    this.state = {
-      refresh: false,
-    };
-  };
-
-  shouldRefresh = () => {
-    if (this.props.isAuthenticated) {
-      console.log("hei?");
-      window.location.reload();
-    }
-  };
   render() {
     document.title = "MyResume | Login";
     if (this.props.isAuthenticated) {
-      // JSON.parse(localStorage.getItem("userInfo"));
+      JSON.parse(localStorage.getItem("userInfo"));
       localStorage.setItem("currUser", this.state.username);
       return <Redirect to="/student" />;
     }

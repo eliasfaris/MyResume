@@ -22,15 +22,12 @@ table {
 
 .middle {
   background-color: #fff;
-  /* width: 75vw; */
   box-shadow: 0 0 0.5cm #7b7d7d;
   margin: 0 auto;
   width: 15cm;
   height: 13cm;
   margin-top: 50px;
   margin-bottom: 0.5cm;
-  /* margin-bottom: 15cm; */
-  /* margin-top: 10px; */
 }
 
 .right {
@@ -70,8 +67,5 @@ table {
     left: 10px;
     right: 60px;
     top: -50px;
-    /* margin: 100px; 
-    margin-left: 15px;
-    margin-right: 15px;  */
   }
 }

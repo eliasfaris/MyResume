@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Paper from "./Paper/Paper";
 import { makeStyles } from "@material-ui/core/styles";
-import { green, pink, red } from "@material-ui/core/colors";
+import { green, pink } from "@material-ui/core/colors";
 import Avatar from "@material-ui/core/Avatar";
 import PictureAsPdfIcon from "@material-ui/icons/PictureAsPdf";
 import Tooltip from "@material-ui/core/Tooltip";

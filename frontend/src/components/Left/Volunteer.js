@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
@@ -8,7 +7,7 @@ import { ResumeContext } from "../../contexts/ResumeContext";
 function Volunteer() {
   const { content, updateVolunteerData } =
     useContext(ResumeContext);
-  const [btnText, setBtnText] = useState("Add");
+  const [setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -34,15 +33,13 @@ function Volunteer() {
           inputRef={register({
             max: {
               value: 3,
-              message: "error message", // <p>error message</p>
+              message: "error message", 
             },
           })}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
-        {/*          {...register("message", {
-            required: "Required",
-          })} */}
+
         <TextField
           id="outlined-basic"
           label="Volunteer 2"

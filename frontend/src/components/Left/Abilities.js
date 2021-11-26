@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
@@ -9,7 +8,7 @@ function Abilities() {
   const { content, updateAdditionalData } = useContext(
     ResumeContext
   );
-  const [btnText, setBtnText] = useState("Add");
+  const [setBtnText] = useState("Add");
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -29,7 +28,7 @@ function Abilities() {
         <h4>Skills</h4>
         <TextField
           id="outlined-basic"
-          label="Skills (skill1, skill2, ...)"
+          label="Skills (skill1, ...)"
           name="skills"
           variant="outlined"
           defaultValue={content.skills}
@@ -49,7 +48,7 @@ function Abilities() {
         <h4>Tools</h4>
         <TextField
           id="outlined-basic"
-          label="Tools (tool1, tool2, ...)"
+          label="Tools (tool1, ...)"
           name="tools"
           variant="outlined"
           defaultValue={content.tools}

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import Header from "./Header";
 import Professional from "./Professional";
 import Education from "./Education";
@@ -7,14 +7,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import myClasses from "./Left.module.css";
 import logo from "../images/logo.png";
-import { ResumeContext } from "../../contexts/ResumeContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Volunteer from "./Volunteer";
 import Projects from "./Projects";
 
 const useStyles = makeStyles({
   recruiterBtn: {
-    background: "linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)",
+    background: "linear-gradient(135deg, #8BC6EC 0%, #e6a923 100%)",
     border: 0,
     borderRadius: 3,
     boxShadow: "0 3px 5px 2px #F2F3F4",
@@ -31,24 +30,17 @@ const useStyles = makeStyles({
     color: "#0298B8 ",
   },
 });
-console.log(localStorage.getItem("userInfo"));
-// this.onClick = this.onClick.bind(this);
-// onClick = (e) => {
-//   // this.props.login(this.state.username, this.state.password),
-//   localStorage.setItem("userInfo", JSON.stringify(this.state.username));
-// };
+
 
 function Left() {
-  const { control } = useContext(ResumeContext);
   const classes = useStyles();
   let recruiterPage;
   recruiterPage = (
     <button
       color="primary"
-      // onClick={this.onClick}
       className={classes.recruiterBtn}
     >
-      <a href="/recruiter">Recruiter Page </a>
+      <a class= "RecruiterBtn" href="/recruiter">Recruiter Page </a>
     </button>
   );
   return (
@@ -58,7 +50,6 @@ function Left() {
           <img src={logo} alt="logo" />
         </div>
         <div styles={{ flexGrow: 1 }}>{recruiterPage}</div>
-        {/* <div styles={{ flexGrow: 1 }}>{expData}</div> */}
       </div>
 
       <div className="">
@@ -114,8 +105,6 @@ function Left() {
           <div>
             <hr className={myClasses.hr} />
             <div className={myClasses.formsSection}>
-              {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
               <Switch>
                 <Route path="/student/header">
                   <Header />

@@ -1,5 +1,4 @@
 from django.db import models
-from argon2 import PasswordHasher
 # Create your models here.
 
 class RegisterUser(models.Model):
@@ -11,7 +10,3 @@ class RegisterUser(models.Model):
     class Meta:
        managed = True
 
-
-#     # hashedpass = PasswordHasher()
-#     # hashedpass.hash(password)
-    

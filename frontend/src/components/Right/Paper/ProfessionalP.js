@@ -9,10 +9,7 @@ function ProfessionalP() {
   let contentUse;
   contentUse = content;
 
-
-  // console.log("Length: " + Object.keys(contentUse.company1).length);
   //If there is no data, the Title of the section will not be displayed
-  console.log(Object.keys(contentUse.professional).length);
   let title;
   if (Object.keys(contentUse.professional).length ===2) {
     title = "";

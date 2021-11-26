@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-// import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
-import { Input, TextField } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 
 function Header() {
   const { content, updateHeaderData} =
@@ -21,7 +20,6 @@ function Header() {
         className={classes.formStyle}
         noValidate
         autoComplete="off"
-        // onSubmit={handleSubmit(onSubmit)}
       >
         <TextField
           id="outlined-basic"

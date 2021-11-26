@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../actions/auth";
@@ -22,16 +21,9 @@ export class Navbar extends Component {
         </span>
         &nbsp;&nbsp;&nbsp;
         <li>
-          <button class="navbar-brand" onClick={this.props.logout}>
+          <button class="navbar-brand1" onClick={this.props.logout}>
             Logout
           </button>
-        </li>
-      </ul>
-    );
-    const guestLinks2 = (
-      <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li className="nav-item">
-          <Link to="/register" className="nav-link"></Link>
         </li>
       </ul>
     );

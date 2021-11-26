@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
@@ -205,15 +204,6 @@ function Professional() {
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />
-
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          type="submit"
-          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
-        >
-          {btnText}
-        </Button> */}
       </form>
     </div>
   );

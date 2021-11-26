@@ -8,10 +8,6 @@ import ResumeContextProvider from "../contexts/ResumeContext";
 export default class Student extends Component {
   render() {
     document.title = "Student page";
-    // console.log(JSON.parse(localStorage.getItem("userInfo")));
-    // console.log(JSON.parse(localStorage.getItem("currUser")));
-    // var currentUser = localStorage.getItem("currUser");
-    // console.log(currentUser);
     function Templates() {
       const useStyles = makeStyles({
         headerLink: {

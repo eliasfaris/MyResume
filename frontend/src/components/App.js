@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Student from "./student";
 import Recruiter from "./recruiter";
 import Login from "./accounts/Login";
@@ -34,8 +34,6 @@ class App extends Component {
           <Navbar />
           <Alerts />
           <BrowserRouter>
-            {/* <div className="app"> */}
-
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
@@ -47,7 +45,6 @@ class App extends Component {
               </Switch>
             </ResumeContextProvider>
           </BrowserRouter>
-          {/* </div> */}
         </AlertProvider>
       </Provider>
     );
