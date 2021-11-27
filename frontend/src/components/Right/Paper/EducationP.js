@@ -59,7 +59,7 @@ function EducationP() {
   }
 
   let achSpace;
-  if (!contentUse.education.gpa) {
+  if (!contentUse.education.achievements) {
     achSpace = "";
   } else {
     achSpace = ", ";

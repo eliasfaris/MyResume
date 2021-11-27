@@ -57,6 +57,22 @@ function ProfessionalP() {
     }
   });
 
+  let hyphen1;
+  if (!contentUse.professional.end1) {
+    hyphen1 = "";
+  } else {
+    hyphen1 = " - ";
+  }
+
+  let hyphen2;
+  if (!contentUse.professional.end2) {
+    hyphen2 = "";
+  } else {
+    hyphen2 = " - ";
+  }
+
+
+
   return (
     <div className={classes.professionalResume}>
       <div className="">
@@ -66,7 +82,7 @@ function ProfessionalP() {
           {contentUse.professional.local1}
         </p>
         <p>
-          {contentUse.professional.position1} {contentUse.professional.start1}{" "}
+          {contentUse.professional.position1} {contentUse.professional.start1}{hyphen1}
           {contentUse.professional.end1}
         </p>
         <ul>{bulletProfessional1}</ul>
@@ -75,7 +91,7 @@ function ProfessionalP() {
           {contentUse.professional.local2}
         </p>
         <p>
-          {contentUse.professional.position2} {contentUse.professional.start2}{" "}
+          {contentUse.professional.position2} {contentUse.professional.start2}{hyphen2}
           {contentUse.professional.end2}
         </p>
         <ul>{bulletProfessional2}</ul>
