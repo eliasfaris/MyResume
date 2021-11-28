@@ -36,4 +36,6 @@
 7. Finally, go to 127.0.0.1:8000 on your web browser to use the application.
 
 # Code Structure
+<img width="530" alt="Architecture Design" src="https://user-images.githubusercontent.com/54566871/143754170-80bc3323-daf2-4ae3-861e-3962287ffddb.png">
+
 
