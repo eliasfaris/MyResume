@@ -11,6 +11,9 @@
    preview of the users resume on the right while inputting their information on the left. The application auto-formats the users resume to help minimalize scrutiny to organization
    and architecture. When the user is done creating their resume, they may download their resume as a PDF. We involed a recruiter page to demonstrate our vision on having 
    recruiters be able to filter resumes to reach out to users for job opportunities.
+   
+# Running the project through the web
+http://ec2-35-182-221-124.ca-central-1.compute.amazonaws.com:8000/
   
 # Instructions for running the project locally through docker(preferred)
 1. Download Github zip file
@@ -37,5 +40,6 @@
 
 # Code Structure
 <img width="530" alt="Architecture Design" src="https://user-images.githubusercontent.com/54566871/143754170-80bc3323-daf2-4ae3-861e-3962287ffddb.png">
+The MyResume web application is a full stack application with Django's Python framework to taking care of the backend. There are folders in the root directory specified as "MyResume," "Student," and "Recruiter" that take care of the different models, views, and urls, to render users appropriately. Similarely, there is another folder called, "accounts" which is taking care of the authentication of the users using serializers to create queries and communicate with the database to validate. The database utilized is mySQL. Within the "frontend" folder in the root directory, this is React JS taking care of the frontend of the application. This is where the user interface is being implemented and the real-time processing is taken place when inputting resume content.
 
 
