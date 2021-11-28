@@ -28,7 +28,8 @@ http://ec2-35-182-221-124.ca-central-1.compute.amazonaws.com:8000/
 # Instructions for running the project locally
 1. Download Github zip file
 2. Unzip the file and open up two terminals
-3. To start the django framework, on one of the terminals go to the main root directory where the file "manage.py" is
+3. To begin, go to the root directory where the fole "manage.py" is and in terminal, type: pip install -r requirements.txt
+4. To start the django framework, on one of the terminals go to the main root directory where the file "manage.py" is
 <br>In terminal type: python manage.py runserver
 4. To start react js, on the second terminal go to the folder called "frontend"
 <br>In terminal, type: npm build
