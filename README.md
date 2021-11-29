@@ -9,6 +9,9 @@
 # Code Repository
 https://github.com/eliasfaris/MyResume
 
+# Demo Video
+https://youtu.be/tjklcsX-fas
+
 # Project Introduction
    Our application is a resume building web app allowing users to create an account, login, and store their resume content to local storage. The application shows a real-time
    preview of the users resume on the right while inputting their information on the left. The application auto-formats the users resume to help minimalize scrutiny to organization
